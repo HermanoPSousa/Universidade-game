@@ -59,6 +59,9 @@ height = 238.0
 
 [node name="world-01" type="Node2D"]
 
+[node name="Level" type="TileMap" parent="."]
+format = 2
+
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(1, 0)
 script = ExtResource("1_ljgxj")
