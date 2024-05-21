@@ -1,0 +1,52 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1716292007
+icon.svg::CompressedTexture2D::5779000665864331661::1716290953::1716290960::1::::<><>::
+::res://Assets/::1716291960
+::res://Assets/Cenario 1/::1716291960
+::res://Assets/Cenario 1/Background/::1716291960
+1 ANTENA 1.png::CompressedTexture2D::4023924035485392979::1716146305::1716292053::1::::<><>::
+2 ANTENA 1.png::CompressedTexture2D::3085408255662049711::1716146281::1716292053::1::::<><>::
+3 LUZES DA CIDADE.png::CompressedTexture2D::5706824432466573219::1716146242::1716292053::1::::<><>::
+4 CEU.png::CompressedTexture2D::1309293530920832395::1716146201::1716292053::1::::<><>::
+5 NOITE.png::CompressedTexture2D::4139322349900851439::1716146167::1716292053::1::::<><>::
+ESTÁTICO.png::CompressedTexture2D::7118109763770956007::1716146070::1716292054::1::::<><>::
+::res://Assets/Cenario 1/Characters/::1716291960
+::res://Assets/Cenario 1/Characters/ENEMIE/::1716291960
+ENEMIE RUN.png::CompressedTexture2D::4312709115422438995::1716237022::1716292053::1::::<><>::
+::res://Assets/Cenario 1/Characters/PLAYER/::1716291960
+IDLE.png::CompressedTexture2D::6989889534936892446::1716122782::1716292053::1::::<><>::
+JUMP.png::CompressedTexture2D::4578554664278894385::1716135009::1716292053::1::::<><>::
+RUN.png::CompressedTexture2D::8829290557183554973::1716235249::1716292054::1::::<><>::
+::res://Assets/Cenario 1/Effects/::1716291960
+::res://Assets/Cenario 1/Elements/::1716291960
+APPLE.png::CompressedTexture2D::4449421925404097784::1716121752::1716292053::1::::<><>::
+COIN.png::CompressedTexture2D::1262591849835197561::1716121627::1716292054::1::::<><>::
+KEY.png::CompressedTexture2D::9170538906061838754::1716120358::1716292054::1::::<><>::
+::res://Assets/Cenario 1/Tiles/::1716291960
+TILES.png::CompressedTexture2D::1667343261491928472::1716147620::1716292054::1::::<><>::
+::res://Assets/Cenario 2/::1716291960
+::res://Assets/Cenario 2/Background/::1716291960
+::res://Assets/Cenario 2/Characters/::1716291960
+::res://Assets/Cenario 2/Characters/ENEMIE/::1716291960
+::res://Assets/Cenario 2/Characters/PLAYER/::1716291960
+::res://Assets/Cenario 2/Effects/::1716291960
+::res://Assets/Cenario 2/Elements/::1716291960
+::res://Assets/Cenario 2/Tiles/::1716291960
+::res://Assets/Cenario 3/::1716291960
+::res://Assets/Cenario 3/Background/::1716291960
+::res://Assets/Cenario 3/Characters/::1716291960
+::res://Assets/Cenario 3/Characters/ENEMIE/::1716291960
+::res://Assets/Cenario 3/Characters/PLAYER/::1716291960
+::res://Assets/Cenario 3/Effects/::1716291960
+::res://Assets/Cenario 3/Elements/::1716291960
+::res://Assets/Cenario 3/Tiles/::1716291960
+::res://Assets/Cenario 4/::1716291960
+::res://Assets/Cenario 4/Background/::1716291960
+::res://Assets/Cenario 4/Characters/::1716291960
+::res://Assets/Cenario 4/Characters/ENEMIE/::1716291960
+::res://Assets/Cenario 4/Characters/PLAYER/::1716291960
+::res://Assets/Cenario 4/Effects/::1716291960
+::res://Assets/Cenario 4/Elements/::1716291960
+::res://Assets/Cenario 4/Tiles/::1716291960
+::res://world-01/::1716291978
+world_01.tscn::PackedScene::2385113086132037066::1716291051::0::1::::<><>::
