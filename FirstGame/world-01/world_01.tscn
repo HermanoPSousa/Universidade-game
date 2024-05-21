@@ -369,3 +369,5 @@ position = Vector2(69, 123)
 shape = SubResource("CapsuleShape2D_jn08c")
 
 [node name="Camera" type="Camera2D" parent="player"]
+limit_left = 0
+editor_draw_limits = true
