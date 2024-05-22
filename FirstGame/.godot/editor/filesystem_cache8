@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716319725
+::res://::1716343168
 icon.svg::CompressedTexture2D::5779000665864331661::1716290953::1716290960::1::::<><>::
 ::res://Assets/::1716291960
 ::res://Assets/Cenario 1/::1716291960
@@ -51,7 +51,7 @@ TILES.png::CompressedTexture2D::1667343261491928472::1716147620::1716292054::1::
 ::res://Assets/Cenario 4/Effects/::1716291960
 ::res://Assets/Cenario 4/Elements/::1716291960
 ::res://Assets/Cenario 4/Tiles/::1716291960
-::res://world-01/::1716319649
-world_01.tscn::PackedScene::2385113086132037066::1716319649::0::1::::<><>::res://world-01/scripts/player.gd<>uid://c6t7pvcpeptji::::res://Assets/Cenario 1/Characters/PLAYER/IDLE.png<>uid://x0w5ukiv2way::::res://Assets/Cenario 1/Tiles/TILES.png<>uid://7bfr2xq3ooo2::::res://Assets/Cenario 1/Tiles/Floor 2.png<>uid://b6h5ekdppg1pl::::res://Assets/Cenario 1/Characters/PLAYER/JUMP.png<>uid://dnopu12lp8x2u::::res://Assets/Cenario 1/Characters/PLAYER/PLAYER RUN.png<>uid://by8ebfxygh4t4::::res://Assets/Cenario 1/Background/5 NOITE.png<>uid://swh4xm3ur4rn::::res://Assets/Cenario 1/Background/4 CEU.png<>uid://cnkotgybbgmpv::::res://Assets/Cenario 1/Background/3 LUZES DA CIDADE.png<>uid://bj7uhuae1pbxf::::res://Assets/Cenario 1/Background/2 ANTENA 1.png<>uid://bxlho80tdxd68::::res://Assets/Cenario 1/Background/1 ANTENA 1.png
+::res://world-01/::1716320586
+world_01.tscn::PackedScene::2385113086132037066::1716320586::0::1::::<><>::res://world-01/scripts/player.gd<>uid://c6t7pvcpeptji::::res://Assets/Cenario 1/Characters/PLAYER/IDLE.png<>uid://x0w5ukiv2way::::res://Assets/Cenario 1/Tiles/TILES.png<>uid://7bfr2xq3ooo2::::res://Assets/Cenario 1/Tiles/Floor 2.png<>uid://b6h5ekdppg1pl::::res://Assets/Cenario 1/Characters/PLAYER/JUMP.png<>uid://dnopu12lp8x2u::::res://Assets/Cenario 1/Characters/PLAYER/PLAYER RUN.png<>uid://by8ebfxygh4t4::::res://Assets/Cenario 1/Background/5 NOITE.png<>uid://swh4xm3ur4rn::::res://Assets/Cenario 1/Background/4 CEU.png<>uid://cnkotgybbgmpv::::res://Assets/Cenario 1/Background/3 LUZES DA CIDADE.png<>uid://bj7uhuae1pbxf::::res://Assets/Cenario 1/Background/2 ANTENA 1.png<>uid://bxlho80tdxd68::::res://Assets/Cenario 1/Background/1 ANTENA 1.png
 ::res://world-01/scripts/::1716313541
 player.gd::GDScript::-1::1716313541::0::1::::<>CharacterBody2D<>::
