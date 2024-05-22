@@ -1,5 +1,6 @@
+res://Scripts/moving_platform.gd
+res://Prefabs/moving_platform.tscn
 res://world-01/world_01.tscn
 res://Prefabs/coin.tscn
-res://Scripts/coin.gd
 res://Prefabs/apple.tscn
-res://world-01/scripts/player.gd
+res://Scripts/apple.gd

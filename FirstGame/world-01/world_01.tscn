@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://88mp1pnbbqek"]
+[gd_scene load_steps=36 format=3 uid="uid://88mp1pnbbqek"]
 
 [ext_resource type="Script" path="res://world-01/scripts/player.gd" id="1_ljgxj"]
 [ext_resource type="Texture2D" uid="uid://c6t7pvcpeptji" path="res://Assets/Cenario 1/Characters/PLAYER/IDLE.png" id="1_pyqmd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bxlho80tdxd68" path="res://Assets/Cenario 1/Background/1 ANTENA 1.png" id="11_2ogx0"]
 [ext_resource type="PackedScene" uid="uid://cgvxgr5e5h8lf" path="res://Prefabs/coin.tscn" id="12_7aph4"]
 [ext_resource type="PackedScene" uid="uid://8b78ig51mxco" path="res://Prefabs/apple.tscn" id="13_b2yhu"]
+[ext_resource type="PackedScene" uid="uid://3wxc8abj16t6" path="res://Prefabs/moving_platform.tscn" id="14_7dlox"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_nd47y"]
 tile_data = PackedInt32Array(0, 131072, 0, 65536, 65536, 0, 131072, 131072, 0, 196608, 65536, 0, 1, 65536, 0, 65537, 131072, 0, 131073, 65536, 0, 196609, 131072, 0, 2, 131072, 0, 65538, 65536, 0, 131074, 131072, 0, 196610, 65536, 0, 3, 65536, 0, 65539, 131072, 0, 131075, 65536, 0, 196611, 131072, 0, 4, 131072, 0, 65540, 65536, 0, 131076, 131072, 0, 196612, 65536, 0, 5, 65536, 0, 65541, 131072, 0, 131077, 65536, 0, 196613, 131072, 0)
@@ -414,10 +415,10 @@ layer_0/tile_data = PackedInt32Array(3866629, 131072, 0, 3866630, 65536, 0, 3866
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("12_7aph4")]
-position = Vector2(1312, 480)
+position = Vector2(900, 380)
 
-[node name="Coin9" parent="Coins" instance=ExtResource("12_7aph4")]
-position = Vector2(449, 800)
+[node name="Coin10" parent="Coins" instance=ExtResource("12_7aph4")]
+position = Vector2(1988, 100)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("12_7aph4")]
 position = Vector2(1856, 544)
@@ -440,10 +441,22 @@ position = Vector2(1288, 160)
 [node name="Coin8" parent="Coins" instance=ExtResource("12_7aph4")]
 position = Vector2(336, 416)
 
+[node name="Coin9" parent="Coins" instance=ExtResource("12_7aph4")]
+position = Vector2(449, 800)
+
 [node name="Apples" type="Node2D" parent="."]
 
 [node name="Apple" parent="Apples" instance=ExtResource("13_b2yhu")]
-position = Vector2(191, 227)
+position = Vector2(135, 185)
+
+[node name="Moving_Platform" parent="." instance=ExtResource("14_7dlox")]
+position = Vector2(400, 250)
+distance = 5000
+
+[node name="Moving_Platform2" parent="." instance=ExtResource("14_7dlox")]
+position = Vector2(2000, 850)
+distance = 550
+move_horizontal = false
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(1, 373)

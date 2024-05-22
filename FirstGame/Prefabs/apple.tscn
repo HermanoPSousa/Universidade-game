@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://8b78ig51mxco"]
+[gd_scene load_steps=11 format=3 uid="uid://8b78ig51mxco"]
 
 [ext_resource type="Texture2D" uid="uid://b4nllgmxv2cku" path="res://Assets/Cenario 1/Elements/APPLE.png" id="1_ibjl3"]
+[ext_resource type="Script" path="res://Scripts/apple.gd" id="1_krkkp"]
 [ext_resource type="Texture2D" uid="uid://bv0kdjxax3s7u" path="res://Assets/Cenario 1/Effects/EFFECT APPLE.png" id="1_l7edr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aikwa"]
@@ -46,7 +47,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qp3eu")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -55,6 +56,7 @@ animations = [{
 radius = 29.0689
 
 [node name="Apple" type="Area2D"]
+script = ExtResource("1_krkkp")
 
 [node name="Anime" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x3syo")
@@ -63,3 +65,6 @@ autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vq1ca")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Anime" to="." method="_on_anime_animation_finished"]
