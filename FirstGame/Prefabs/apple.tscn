@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://8b78ig51mxco"]
+
+[ext_resource type="Texture2D" uid="uid://b4nllgmxv2cku" path="res://Assets/Cenario 1/Elements/APPLE.png" id="1_ibjl3"]
+[ext_resource type="Texture2D" uid="uid://bv0kdjxax3s7u" path="res://Assets/Cenario 1/Effects/EFFECT APPLE.png" id="1_l7edr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aikwa"]
+atlas = ExtResource("1_l7edr")
+region = Rect2(0, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf6rp"]
+atlas = ExtResource("1_l7edr")
+region = Rect2(50, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoegu"]
+atlas = ExtResource("1_l7edr")
+region = Rect2(100, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr0s5"]
+atlas = ExtResource("1_l7edr")
+region = Rect2(150, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp3eu"]
+atlas = ExtResource("1_ibjl3")
+region = Rect2(0, 0, 50, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3syo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aikwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf6rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoegu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr0s5")
+}],
+"loop": false,
+"name": &"collection",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp3eu")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq1ca"]
+radius = 29.0689
+
+[node name="Apple" type="Area2D"]
+
+[node name="Anime" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x3syo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vq1ca")
