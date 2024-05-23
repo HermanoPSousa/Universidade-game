@@ -18,14 +18,16 @@ IDLE.png::CompressedTexture2D::6989889534936892446::1716122782::1716292053::1:::
 JUMP.png::CompressedTexture2D::4578554664278894385::1716135009::1716292053::1::::<><>::
 PLAYER RUN.png::CompressedTexture2D::8101566185538138142::1716312553::1716312563::1::::<><>::
 RUN.png::CompressedTexture2D::8829290557183554973::1716235249::1716292054::1::::<><>::
-::res://Assets/Cenario 1/Effects/::1716398279
+::res://Assets/Cenario 1/Effects/::1716428577
 EFFECT APPLE.png::CompressedTexture2D::3912608879525165868::1716398277::1716398279::1::::<><>::
+KeyLife Effect.png::CompressedTexture2D::908232932801877812::1716428577::1716428582::1::::<><>::
 NEW SPARKLING LIGHTS.png::CompressedTexture2D::4471386968007806892::1716392658::1716392701::1::::<><>::
-::res://Assets/Cenario 1/Elements/::1716292054
+::res://Assets/Cenario 1/Elements/::1716427447
 APPLE.png::CompressedTexture2D::4449421925404097784::1716121752::1716292053::1::::<><>::
 COIN.png::CompressedTexture2D::1262591849835197561::1716121627::1716292054::1::::<><>::
 KEY.png::CompressedTexture2D::9170538906061838754::1716120358::1716292054::1::::<><>::
-::res://Assets/Cenario 1/Platforms/::1716405059
+KeyLife.png::CompressedTexture2D::7865302827601630364::1716427447::1716428582::1::::<><>::
+::res://Assets/Cenario 1/Platforms/::1716410243
 Sprits Platform.png::CompressedTexture2D::5946665727755713937::1716404988::1716405059::1::::<><>::
 ::res://Assets/Cenario 1/Tiles/::1716304107
 Floor 2.png::CompressedTexture2D::2248442772057218207::1716303552::1716303677::1::::<><>::
@@ -55,13 +57,15 @@ TILES.png::CompressedTexture2D::1667343261491928472::1716147620::1716292054::1::
 ::res://Assets/Cenario 4/Effects/::1716291960
 ::res://Assets/Cenario 4/Elements/::1716291960
 ::res://Assets/Cenario 4/Tiles/::1716291960
-::res://Prefabs/::1716410078
-apple.tscn::PackedScene::2320298523630450286::1716409943::0::1::::<><>::uid://b4nllgmxv2cku::::res://Assets/Cenario 1/Elements/APPLE.png<>uid://bv0kdjxax3s7u::::res://Assets/Cenario 1/Effects/EFFECT APPLE.png
-coin.tscn::PackedScene::5238734507109940119::1716409943::0::1::::<><>::uid://r8ux6aq376jl::::res://Assets/Cenario 1/Elements/COIN.png<>res://Scripts/coin.gd<>uid://b4x8dceyg0ncm::::res://Assets/Cenario 1/Effects/NEW SPARKLING LIGHTS.png
-moving_platform.tscn::PackedScene::4842786314695268371::1716410078::0::1::::<><>::res://Scripts/moving_platform.gd<>uid://cqyuylms6s6kb::::res://Assets/Cenario 1/Platforms/Sprits Platform.png
-::res://Scripts/::1716410146
+::res://Prefabs/::1716426024
+apple.tscn::PackedScene::2320298523630450286::1716426024::0::1::::<><>::uid://b4nllgmxv2cku::::res://Assets/Cenario 1/Elements/APPLE.png<>res://Scripts/apple.gd<>uid://bv0kdjxax3s7u::::res://Assets/Cenario 1/Effects/EFFECT APPLE.png
+coin.tscn::PackedScene::5238734507109940119::1716425338::0::1::::<><>::uid://r8ux6aq376jl::::res://Assets/Cenario 1/Elements/COIN.png<>res://Scripts/coin.gd<>uid://b4x8dceyg0ncm::::res://Assets/Cenario 1/Effects/NEW SPARKLING LIGHTS.png
+moving_platform.tscn::PackedScene::2012105728204735905::1716425338::0::1::::<><>::uid://cqyuylms6s6kb::::res://Assets/Cenario 1/Platforms/Sprits Platform.png<>res://Scripts/moving_platform.gd
+::res://Scripts/::1716419048
 coin.gd::GDScript::-1::1716407628::0::1::::<>Area2D<>::
-::res://world-01/::1716410112
-world_01.tscn::PackedScene::2385113086132037066::1716410112::0::1::::<><>::res://world-01/scripts/player.gd<>uid://c6t7pvcpeptji::::res://Assets/Cenario 1/Characters/PLAYER/IDLE.png<>uid://x0w5ukiv2way::::res://Assets/Cenario 1/Tiles/TILES.png<>uid://7bfr2xq3ooo2::::res://Assets/Cenario 1/Tiles/Floor 2.png<>uid://b6h5ekdppg1pl::::res://Assets/Cenario 1/Characters/PLAYER/JUMP.png<>uid://dnopu12lp8x2u::::res://Assets/Cenario 1/Characters/PLAYER/PLAYER RUN.png<>uid://by8ebfxygh4t4::::res://Assets/Cenario 1/Background/5 NOITE.png<>uid://swh4xm3ur4rn::::res://Assets/Cenario 1/Background/4 CEU.png<>uid://cnkotgybbgmpv::::res://Assets/Cenario 1/Background/3 LUZES DA CIDADE.png<>uid://bj7uhuae1pbxf::::res://Assets/Cenario 1/Background/2 ANTENA 1.png<>uid://bxlho80tdxd68::::res://Assets/Cenario 1/Background/1 ANTENA 1.png<>uid://cgvxgr5e5h8lf::::res://Prefabs/coin.tscn<>uid://8b78ig51mxco::::res://Prefabs/apple.tscn
+moving_platform.gd::GDScript::-1::1716414978::0::1::::<>Node2D<>::
+apple.gd::GDScript::-1::1716419048::0::1::::<>Area2D<>::
+::res://world-01/::1716425646
+world_01.tscn::PackedScene::2385113086132037066::1716425646::0::1::::<><>::res://world-01/scripts/player.gd<>uid://c6t7pvcpeptji::::res://Assets/Cenario 1/Characters/PLAYER/IDLE.png<>uid://x0w5ukiv2way::::res://Assets/Cenario 1/Tiles/TILES.png<>uid://7bfr2xq3ooo2::::res://Assets/Cenario 1/Tiles/Floor 2.png<>uid://b6h5ekdppg1pl::::res://Assets/Cenario 1/Characters/PLAYER/JUMP.png<>uid://dnopu12lp8x2u::::res://Assets/Cenario 1/Characters/PLAYER/PLAYER RUN.png<>uid://by8ebfxygh4t4::::res://Assets/Cenario 1/Background/5 NOITE.png<>uid://swh4xm3ur4rn::::res://Assets/Cenario 1/Background/4 CEU.png<>uid://cnkotgybbgmpv::::res://Assets/Cenario 1/Background/3 LUZES DA CIDADE.png<>uid://bj7uhuae1pbxf::::res://Assets/Cenario 1/Background/2 ANTENA 1.png<>uid://bxlho80tdxd68::::res://Assets/Cenario 1/Background/1 ANTENA 1.png<>uid://cgvxgr5e5h8lf::::res://Prefabs/coin.tscn<>uid://8b78ig51mxco::::res://Prefabs/apple.tscn<>uid://3wxc8abj16t6::::res://Prefabs/moving_platform.tscn
 ::res://world-01/scripts/::1716400299
 player.gd::GDScript::-1::1716400299::0::1::::<>CharacterBody2D<>::

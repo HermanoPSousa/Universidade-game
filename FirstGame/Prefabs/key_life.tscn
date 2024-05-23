@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxlmmfbuor0a8"]
+
+[ext_resource type="Script" path="res://Scripts/key_life.gd" id="1_rpg72"]
+[ext_resource type="Texture2D" uid="uid://dkcanhbckqbo3" path="res://Assets/Cenario 1/Elements/KeyLife.png" id="1_ucik5"]
+[ext_resource type="Texture2D" uid="uid://m67p1bux5d1u" path="res://Assets/Cenario 1/Effects/KeyLife Effect.png" id="2_cstxn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mul03"]
+atlas = ExtResource("2_cstxn")
+region = Rect2(0, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdcx8"]
+atlas = ExtResource("2_cstxn")
+region = Rect2(50, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxxqq"]
+atlas = ExtResource("2_cstxn")
+region = Rect2(100, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rllh3"]
+atlas = ExtResource("1_ucik5")
+region = Rect2(0, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhd5s"]
+atlas = ExtResource("1_ucik5")
+region = Rect2(50, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iesek"]
+atlas = ExtResource("1_ucik5")
+region = Rect2(100, 0, 50, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2141"]
+atlas = ExtResource("1_ucik5")
+region = Rect2(150, 0, 50, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmenv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mul03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdcx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxxqq")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rllh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhd5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iesek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2141")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebv43"]
+radius = 28.0
+height = 56.0
+
+[node name="KeyLife" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_rpg72")
+
+[node name="Anime" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xmenv")
+animation = &"collect"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ebv43")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Anime" to="." method="_on_anime_animation_finished"]

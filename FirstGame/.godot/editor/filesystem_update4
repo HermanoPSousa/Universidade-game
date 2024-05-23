@@ -4,3 +4,5 @@ res://world-01/world_01.tscn
 res://Prefabs/coin.tscn
 res://Prefabs/apple.tscn
 res://Scripts/apple.gd
+res://Scripts/key_life.gd
+res://Prefabs/key_life.tscn
