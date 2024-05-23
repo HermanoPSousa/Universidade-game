@@ -1,15 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5itg6nqpxow5"]
+[gd_scene load_steps=13 format=3 uid="uid://df7yfrxbtvy8f"]
 
-[ext_resource type="Texture2D" uid="uid://b2pdxor5bmgf8" path="res://Assets/Cenario 1/Characters/ENEMIE/ENEMIE RUN.png" id="1_h5djf"]
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_lfvvn"]
-[ext_resource type="Texture2D" uid="uid://onuuyljirf3d" path="res://Assets/Cenario 1/Characters/ENEMIE/HURT.png" id="3_yxstk"]
+[ext_resource type="Script" path="res://Scripts/enemy_back.gd" id="1_bw3ds"]
+[ext_resource type="Texture2D" uid="uid://bagkqmxjcccy0" path="res://Assets/Cenario 1/Characters/ENEMIE/ENEMY BACK.png" id="1_lxwgi"]
+[ext_resource type="Texture2D" uid="uid://onuuyljirf3d" path="res://Assets/Cenario 1/Characters/ENEMIE/HURT.png" id="2_vycwm"]
+[ext_resource type="PackedScene" uid="uid://dtl53lx7kgjjc" path="res://Prefabs/hitbox.tscn" id="4_qdaj7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkpuy"]
-size = Vector2(109, 230)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwuvr"]
+height = 248.0
 
-[sub_resource type="Animation" id="Animation_nxa4n"]
-resource_name = "Walk"
-length = 0.5
+[sub_resource type="Animation" id="Animation_wg8x8"]
+resource_name = "walk"
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,10 +19,10 @@ tracks/0/path = NodePath("Texture:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_h5djf")]
+"values": [ExtResource("1_lxwgi")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -30,7 +31,7 @@ tracks/1/path = NodePath("Texture:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
@@ -48,7 +49,7 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_5wyhy"]
+[sub_resource type="Animation" id="Animation_3medk"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -60,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_h5djf")]
+"values": [ExtResource("1_lxwgi")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -87,10 +88,12 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_xbv82"]
+[sub_resource type="Animation" id="Animation_kc6iy"]
 resource_name = "Hurt"
+
+[sub_resource type="Animation" id="Animation_5us0x"]
+resource_name = "HurtPhisics"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,10 +101,10 @@ tracks/0/path = NodePath("Texture:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_yxstk")]
+"values": [ExtResource("2_vycwm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -110,7 +113,7 @@ tracks/1/path = NodePath("Texture:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -128,10 +131,9 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_0qwu8"]
+[sub_resource type="Animation" id="Animation_7thur"]
 resource_name = "Standing"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -139,10 +141,10 @@ tracks/0/path = NodePath("Texture:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_yxstk")]
+"values": [ExtResource("2_vycwm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -151,7 +153,7 @@ tracks/1/path = NodePath("Texture:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -169,35 +171,47 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fotb"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7wxvv"]
 _data = {
-"Hurt": SubResource("Animation_xbv82"),
-"RESET": SubResource("Animation_5wyhy"),
-"Standing": SubResource("Animation_0qwu8"),
-"Walk": SubResource("Animation_nxa4n")
+"Hurt": SubResource("Animation_kc6iy"),
+"HurtPhisics": SubResource("Animation_5us0x"),
+"RESET": SubResource("Animation_3medk"),
+"Standing": SubResource("Animation_7thur"),
+"walk": SubResource("Animation_wg8x8")
 }
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j25ww"]
+size = Vector2(48, 112)
+
+[node name="Enemy_back" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_lfvvn")
-
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-38, -1)
-shape = SubResource("RectangleShape2D_wkpuy")
+script = ExtResource("1_bw3ds")
 
 [node name="Texture" type="Sprite2D" parent="."]
-texture = ExtResource("1_h5djf")
+texture = ExtResource("1_lxwgi")
 hframes = 4
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-27, -4)
+shape = SubResource("CapsuleShape2D_dwuvr")
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4fotb")
+"": SubResource("AnimationLibrary_7wxvv")
 }
-autoplay = "Walk"
-speed_scale = 0.4
+autoplay = "walk"
+speed_scale = 0.5
 
 [node name="Wall_detector" type="RayCast2D" parent="."]
-position = Vector2(-18, 3)
-target_position = Vector2(-80, 0)
+position = Vector2(-16, 64)
+target_position = Vector2(-33, 0)
 collision_mask = 6
+
+[node name="Hitbox" parent="." instance=ExtResource("4_qdaj7")]
+
+[node name="Collision" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-16, -24)
+shape = SubResource("RectangleShape2D_j25ww")
+
+[connection signal="animation_finished" from="Anime" to="." method="_on_anime_animation_finished"]

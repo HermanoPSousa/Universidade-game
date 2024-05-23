@@ -9,6 +9,7 @@ animations = []
 radius = 29.0689
 
 [node name="Apple" type="Area2D"]
+collision_layer = 8
 script = ExtResource("1_krkkp")
 
 [node name="Anime" type="AnimatedSprite2D" parent="."]

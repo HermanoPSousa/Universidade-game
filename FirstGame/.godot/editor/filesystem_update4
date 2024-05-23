@@ -5,3 +5,9 @@ res://Prefabs/moving_platform.tscn
 res://Prefabs/key_life.tscn
 res://Scripts/enemy.gd
 res://Actors/enemy.tscn
+res://Actors/player.tscn
+res://Actors/enemy_back.tscn
+res://Scripts/enemy_back.gd
+res://Prefabs/hitbox.tscn
+res://Scripts/Hitbox.gd
+res://world-01/scripts/player.gd
