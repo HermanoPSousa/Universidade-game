@@ -1,8 +1,7 @@
-res://Scripts/moving_platform.gd
-res://Prefabs/moving_platform.tscn
 res://world-01/world_01.tscn
 res://Prefabs/coin.tscn
 res://Prefabs/apple.tscn
-res://Scripts/apple.gd
-res://Scripts/key_life.gd
+res://Prefabs/moving_platform.tscn
 res://Prefabs/key_life.tscn
+res://Scripts/enemy.gd
+res://Actors/enemy.tscn
