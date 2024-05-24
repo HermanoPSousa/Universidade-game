@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5psl17ifp4fi"]
+
+[ext_resource type="Texture2D" uid="uid://5nfye50r4mpy" path="res://Assets/Cenario 1/Elements/CORACAO.png" id="1_6bdo6"]
+[ext_resource type="Texture2D" uid="uid://bqxda7f7l50hu" path="res://Assets/Cenario 1/Effects/CORACAO TRANSPARENTE.png" id="1_qp6v8"]
+[ext_resource type="Script" path="res://Scripts/life.gd" id="1_yef0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nmpq"]
+atlas = ExtResource("1_qp6v8")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85v70"]
+atlas = ExtResource("1_qp6v8")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vifqy"]
+atlas = ExtResource("1_qp6v8")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lyr2"]
+atlas = ExtResource("1_6bdo6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jhhg"]
+atlas = ExtResource("1_6bdo6")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phvko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nmpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85v70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vifqy")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lyr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jhhg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmjqv"]
+radius = 25.2982
+
+[node name="life" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_yef0x")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_phvko")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_qmjqv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

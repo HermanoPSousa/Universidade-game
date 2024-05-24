@@ -1,0 +1,150 @@
+[gd_scene load_steps=19 format=3 uid="uid://bj8keme8575vt"]
+
+[ext_resource type="Texture2D" uid="uid://cluokh3mbc5ac" path="res://Assets/Cenario 1/Elements/COIN.png" id="1_pkaxd"]
+[ext_resource type="Texture2D" uid="uid://ba78fcigbh8so" path="res://Assets/Cenario 1/Effects/NEW SPARKLING LIGHTS.png" id="2_t6wuu"]
+
+[sub_resource type="GDScript" id="GDScript_byulk"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_body_entered(body):
+	$anim.play(\"collect\")
+
+
+func _on_anim_animation_finished():
+	queue_free()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a4yu"]
+atlas = ExtResource("2_t6wuu")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25hic"]
+atlas = ExtResource("2_t6wuu")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jari"]
+atlas = ExtResource("2_t6wuu")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v214c"]
+atlas = ExtResource("2_t6wuu")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sir1h"]
+atlas = ExtResource("2_t6wuu")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p2u8"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmpje"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73gnh"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoief"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umj5c"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lffqb"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld4yw"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7hs5"]
+atlas = ExtResource("1_pkaxd")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8vrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a4yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25hic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jari")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v214c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sir1h")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p2u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmpje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73gnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoief")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umj5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lffqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld4yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7hs5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21os7"]
+radius = 28.8444
+
+[node name="coin" type="Area2D"]
+collision_layer = 8
+script = SubResource("GDScript_byulk")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l8vrf")
+animation = &"collect"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_21os7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

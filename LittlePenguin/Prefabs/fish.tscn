@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dofyywp2rc0v1"]
+
+[ext_resource type="Texture2D" uid="uid://cdhjutx5ecoe" path="res://Assets/Cenario 1/Elements/PEIXE.png" id="1_eo2kg"]
+[ext_resource type="Script" path="res://Scripts/fish.gd" id="1_j5tcd"]
+[ext_resource type="Texture2D" uid="uid://c4u6k2mwngw8v" path="res://Assets/Cenario 1/Effects/EFEITO OVO.png" id="1_ni0sy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqayo"]
+atlas = ExtResource("1_ni0sy")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qpm2"]
+atlas = ExtResource("1_ni0sy")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7vmm"]
+atlas = ExtResource("1_ni0sy")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwrp6"]
+atlas = ExtResource("1_eo2kg")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbgfr"]
+atlas = ExtResource("1_eo2kg")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slcem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqayo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qpm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7vmm")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwrp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbgfr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1plx"]
+size = Vector2(48, 40)
+
+[node name="fish" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_j5tcd")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_slcem")
+animation = &"collect"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_s1plx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
