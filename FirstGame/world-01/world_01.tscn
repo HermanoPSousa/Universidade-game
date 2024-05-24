@@ -450,9 +450,6 @@ centered = false
 [node name="Enemy_back" parent="Enemys" instance=ExtResource("13_l5ieq")]
 position = Vector2(1464, 128)
 
-[node name="Enemy_back2" parent="Enemys" instance=ExtResource("13_l5ieq")]
-position = Vector2(640, 776)
-
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
 drag_horizontal_enabled = true

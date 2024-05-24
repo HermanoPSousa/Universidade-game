@@ -1,9 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716468291
+::res://::1716490811
 icon.svg::CompressedTexture2D::5779000665864331661::1716290953::1716290960::1::::<><>::
-::res://Actors/::1716477689
-enemy.tscn::PackedScene::4509767001546787626::1716477689::0::1::::<><>::uid://b2pdxor5bmgf8::::res://Assets/Cenario 1/Characters/ENEMIE/ENEMIE RUN.png<>res://Scripts/enemy.gd<>uid://onuuyljirf3d::::res://Assets/Cenario 1/Characters/ENEMIE/HURT.png
-player.tscn::PackedScene::7506293270064116017::1716477256::0::1::::<><>::res://world-01/scripts/player.gd<>uid://c6t7pvcpeptji::::res://Assets/Cenario 1/Characters/PLAYER/IDLE.png<>uid://b6h5ekdppg1pl::::res://Assets/Cenario 1/Characters/PLAYER/JUMP.png<>uid://dnopu12lp8x2u::::res://Assets/Cenario 1/Characters/PLAYER/PLAYER RUN.png
+::res://Actors/::1716523939
+enemy.tscn::PackedScene::4509767001546787626::1716523938::0::1::::<><>::uid://b2pdxor5bmgf8::::res://Assets/Cenario 1/Characters/ENEMIE/ENEMIE RUN.png<>res://Scripts/enemy.gd<>uid://onuuyljirf3d::::res://Assets/Cenario 1/Characters/ENEMIE/HURT.png
+player.tscn::PackedScene::7506293270064116017::1716523938::0::1::::<><>::res://world-01/scripts/player.gd<>uid://oqfyjqcerd0e::::res://Assets/Cenario 1/Characters/PLAYER/PINGUIM IDLE.png<>uid://bj4plfkjajllr::::res://Assets/Cenario 1/Characters/PLAYER/PINGUIM JUMP.png<>uid://khm4yrruydbi::::res://Assets/Cenario 1/Characters/PLAYER/PINGUIM RUN.png
+enemy_back.tscn::PackedScene::7577733422694431615::1716523939::0::1::::<><>::res://Scripts/enemy_back.gd<>uid://bagkqmxjcccy0::::res://Assets/Cenario 1/Characters/ENEMIE/ENEMY BACK.png<>uid://onuuyljirf3d::::res://Assets/Cenario 1/Characters/ENEMIE/HURT.png<>uid://dtl53lx7kgjjc::::res://Prefabs/hitbox.tscn
 ::res://Assets/::1716291960
 ::res://Assets/Cenario 1/::1716404972
 ::res://Assets/Cenario 1/Background/::1716292054
@@ -14,15 +15,23 @@ player.tscn::PackedScene::7506293270064116017::1716477256::0::1::::<><>::res://w
 5 NOITE.png::CompressedTexture2D::4139322349900851439::1716146167::1716292053::1::::<><>::
 ESTÁTICO.png::CompressedTexture2D::7118109763770956007::1716146070::1716292054::1::::<><>::
 ::res://Assets/Cenario 1/Characters/::1716291960
-::res://Assets/Cenario 1/Characters/ENEMIE/::1716482753
+::res://Assets/Cenario 1/Characters/ENEMIE/::1716524290
 ENEMIE RUN.png::CompressedTexture2D::4312709115422438995::1716237022::1716292053::1::::<><>::
 ENEMY BACK.png::CompressedTexture2D::2399443359069979233::1716482753::1716482781::1::::<><>::
 ENEMY HURT BACK.png::CompressedTexture2D::4411406981396884844::1716482702::1716482781::1::::<><>::
 ENEMY SANDING BACK.png::CompressedTexture2D::5963070487704096033::1716482649::1716482781::1::::<><>::
 HURT.png::CompressedTexture2D::1010732055442194103::1716465368::1716465909::1::::<><>::
-::res://Assets/Cenario 1/Characters/PLAYER/::1716312563
+PINGUIM ENEMY HURT.png::CompressedTexture2D::2208074009332355750::1716524290::1716524291::1::::<><>::
+PINGUIM ENEMY RUN.png::CompressedTexture2D::4833973515671551864::1716522380::1716522729::1::::<><>::
+RAPOSA ENEMY HURT.png::CompressedTexture2D::7196408726739780408::1716522679::1716522729::1::::<><>::
+RAPOSA ENEMY RUN.png::CompressedTexture2D::8376651964261436099::1716522578::1716522729::1::::<><>::
+::res://Assets/Cenario 1/Characters/PLAYER/::1716523376
 IDLE.png::CompressedTexture2D::6989889534936892446::1716122782::1716292053::1::::<><>::
 JUMP.png::CompressedTexture2D::4578554664278894385::1716135009::1716292053::1::::<><>::
+PINGUIM HURT.png::CompressedTexture2D::1343460145761336875::1716522206::1716522729::1::::<><>::
+PINGUIM IDLE.png::CompressedTexture2D::1016020796538870250::1716520774::1716522729::1::::<><>::
+PINGUIM JUMP.png::CompressedTexture2D::3078917908401657371::1716522141::1716522729::1::::<><>::
+PINGUIM RUN.png::CompressedTexture2D::717120760217336086::1716523373::1716523376::1::::<><>::
 PLAYER RUN.png::CompressedTexture2D::8101566185538138142::1716312553::1716312563::1::::<><>::
 RUN.png::CompressedTexture2D::8829290557183554973::1716235249::1716292054::1::::<><>::
 ::res://Assets/Cenario 1/Effects/::1716428582
@@ -64,18 +73,22 @@ TILES.png::CompressedTexture2D::1667343261491928472::1716147620::1716292054::1::
 ::res://Assets/Cenario 4/Effects/::1716291960
 ::res://Assets/Cenario 4/Elements/::1716291960
 ::res://Assets/Cenario 4/Tiles/::1716291960
-::res://Prefabs/::1716477256
-apple.tscn::PackedScene::2320298523630450286::1716477256::0::1::::<><>::res://Scripts/apple.gd
-coin.tscn::PackedScene::5238734507109940119::1716477256::0::1::::<><>::uid://r8ux6aq376jl::::res://Assets/Cenario 1/Elements/COIN.png<>res://Scripts/coin.gd<>uid://b4x8dceyg0ncm::::res://Assets/Cenario 1/Effects/NEW SPARKLING LIGHTS.png
-key_life.tscn::PackedScene::4024222541192229165::1716477256::0::1::::<><>::res://Scripts/key_life.gd<>uid://dkcanhbckqbo3::::res://Assets/Cenario 1/Elements/KeyLife.png<>uid://m67p1bux5d1u::::res://Assets/Cenario 1/Effects/KeyLife Effect.png
-moving_platform.tscn::PackedScene::2012105728204735905::1716477256::0::1::::<><>::uid://cqyuylms6s6kb::::res://Assets/Cenario 1/Platforms/Sprits Platform.png<>res://Scripts/moving_platform.gd
-::res://Scripts/::1716476697
+::res://Prefabs/::1716523939
+apple.tscn::PackedScene::2320298523630450286::1716523938::0::1::::<><>::res://Scripts/apple.gd
+coin.tscn::PackedScene::5238734507109940119::1716523938::0::1::::<><>::uid://r8ux6aq376jl::::res://Assets/Cenario 1/Elements/COIN.png<>res://Scripts/coin.gd<>uid://b4x8dceyg0ncm::::res://Assets/Cenario 1/Effects/NEW SPARKLING LIGHTS.png
+key_life.tscn::PackedScene::4024222541192229165::1716523938::0::1::::<><>::res://Scripts/key_life.gd<>uid://dkcanhbckqbo3::::res://Assets/Cenario 1/Elements/KeyLife.png<>uid://m67p1bux5d1u::::res://Assets/Cenario 1/Effects/KeyLife Effect.png
+moving_platform.tscn::PackedScene::2012105728204735905::1716523938::0::1::::<><>::uid://cqyuylms6s6kb::::res://Assets/Cenario 1/Platforms/Sprits Platform.png<>res://Scripts/moving_platform.gd
+hitbox.tscn::PackedScene::8517430362263803624::1716523939::0::1::::<><>::res://Scripts/Hitbox.gd
+::res://Scripts/::1716496046
 apple.gd::GDScript::-1::1716419048::0::1::::<>Area2D<>::
 coin.gd::GDScript::-1::1716407628::0::1::::<>Area2D<>::
 key_life.gd::GDScript::-1::1716430190::0::1::::<>Area2D<>::
 moving_platform.gd::GDScript::-1::1716414978::0::1::::<>Node2D<>::
 enemy.gd::GDScript::-1::1716476697::0::1::::<>CharacterBody2D<>::
-::res://world-01/::1716477820
-world_01.tscn::PackedScene::2385113086132037066::1716477820::0::1::::<><>::uid://x0w5ukiv2way::::res://Assets/Cenario 1/Tiles/TILES.png<>uid://7bfr2xq3ooo2::::res://Assets/Cenario 1/Tiles/Floor 2.png<>uid://bxlmmfbuor0a8::::res://Prefabs/key_life.tscn<>uid://by8ebfxygh4t4::::res://Assets/Cenario 1/Background/5 NOITE.png<>uid://de7ds221jq3qr::::res://Actors/player.tscn<>uid://swh4xm3ur4rn::::res://Assets/Cenario 1/Background/4 CEU.png<>uid://cnkotgybbgmpv::::res://Assets/Cenario 1/Background/3 LUZES DA CIDADE.png<>uid://bj7uhuae1pbxf::::res://Assets/Cenario 1/Background/2 ANTENA 1.png<>uid://bxlho80tdxd68::::res://Assets/Cenario 1/Background/1 ANTENA 1.png<>uid://cgvxgr5e5h8lf::::res://Prefabs/coin.tscn<>uid://8b78ig51mxco::::res://Prefabs/apple.tscn<>uid://3wxc8abj16t6::::res://Prefabs/moving_platform.tscn<>uid://b5itg6nqpxow5::::res://Actors/enemy.tscn
-::res://world-01/scripts/::1716400299
-player.gd::GDScript::-1::1716400299::0::1::::<>CharacterBody2D<>::
+enemy_back.gd::GDScript::-1::1716494150::0::1::::<>CharacterBody2D<>::
+Hitbox.gd::GDScript::-1::1716494150::0::1::::<>Area2D<>::
+world_01.gd::GDScript::-1::1716496046::0::1::::<>Node2D<>::
+::res://world-01/::1716523938
+world_01.tscn::PackedScene::2385113086132037066::1716523938::0::1::::<><>::res://Scripts/world_01.gd<>uid://x0w5ukiv2way::::res://Assets/Cenario 1/Tiles/TILES.png<>uid://7bfr2xq3ooo2::::res://Assets/Cenario 1/Tiles/Floor 2.png<>uid://bxlmmfbuor0a8::::res://Prefabs/key_life.tscn<>uid://by8ebfxygh4t4::::res://Assets/Cenario 1/Background/5 NOITE.png<>uid://de7ds221jq3qr::::res://Actors/player.tscn<>uid://swh4xm3ur4rn::::res://Assets/Cenario 1/Background/4 CEU.png<>uid://cnkotgybbgmpv::::res://Assets/Cenario 1/Background/3 LUZES DA CIDADE.png<>uid://bj7uhuae1pbxf::::res://Assets/Cenario 1/Background/2 ANTENA 1.png<>uid://bxlho80tdxd68::::res://Assets/Cenario 1/Background/1 ANTENA 1.png<>uid://cgvxgr5e5h8lf::::res://Prefabs/coin.tscn<>uid://8b78ig51mxco::::res://Prefabs/apple.tscn<>uid://df7yfrxbtvy8f::::res://Actors/enemy_back.tscn<>uid://3wxc8abj16t6::::res://Prefabs/moving_platform.tscn
+::res://world-01/scripts/::1716496046
+player.gd::GDScript::-1::1716496046::0::1::::<>CharacterBody2D<>::

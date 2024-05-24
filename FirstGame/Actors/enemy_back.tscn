@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://df7yfrxbtvy8f"]
+[gd_scene load_steps=14 format=3 uid="uid://df7yfrxbtvy8f"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_back.gd" id="1_bw3ds"]
 [ext_resource type="Texture2D" uid="uid://bagkqmxjcccy0" path="res://Assets/Cenario 1/Characters/ENEMIE/ENEMY BACK.png" id="1_lxwgi"]
 [ext_resource type="Texture2D" uid="uid://onuuyljirf3d" path="res://Assets/Cenario 1/Characters/ENEMIE/HURT.png" id="2_vycwm"]
+[ext_resource type="Texture2D" uid="uid://6puwkynqjnec" path="res://Assets/Cenario 1/Characters/ENEMIE/PINGUIM ENEMY HURT.png" id="3_yld2b"]
 [ext_resource type="PackedScene" uid="uid://dtl53lx7kgjjc" path="res://Prefabs/hitbox.tscn" id="4_qdaj7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwuvr"]
@@ -43,10 +44,10 @@ tracks/2/path = NodePath("Texture:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 3]
 }
 
 [sub_resource type="Animation" id="Animation_3medk"]
@@ -104,7 +105,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_vycwm")]
+"values": [ExtResource("3_yld2b")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -125,10 +126,10 @@ tracks/2/path = NodePath("Texture:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_7thur"]
