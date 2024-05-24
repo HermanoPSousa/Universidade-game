@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://srwqvr43mvwa"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_tgm30"]
+[ext_resource type="Texture2D" uid="uid://ckqtqrmgox878" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM IDLE.png" id="2_uttgj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukp20"]
+atlas = ExtResource("2_uttgj")
+region = Rect2(0, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu6ne"]
+atlas = ExtResource("2_uttgj")
+region = Rect2(100, 0, 100, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkxvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukp20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu6ne")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b7wq1"]
+radius = 35.0
+height = 84.0
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(36, 83)
+collision_mask = 2
+script = ExtResource("1_tgm30")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nkxvr")
+animation = &"idle"
+frame_progress = 0.607417
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("CapsuleShape2D_b7wq1")
+
+[node name="camera" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = -200
+limit_bottom = 963
+editor_draw_limits = true
