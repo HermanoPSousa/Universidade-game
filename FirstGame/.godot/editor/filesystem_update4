@@ -11,3 +11,4 @@ res://Scripts/enemy_back.gd
 res://Prefabs/hitbox.tscn
 res://Scripts/Hitbox.gd
 res://world-01/scripts/player.gd
+res://Scripts/world_01.gd

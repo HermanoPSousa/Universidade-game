@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://88mp1pnbbqek"]
+[gd_scene load_steps=23 format=3 uid="uid://88mp1pnbbqek"]
 
+[ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_pt7li"]
 [ext_resource type="Texture2D" uid="uid://x0w5ukiv2way" path="res://Assets/Cenario 1/Tiles/TILES.png" id="1_x622y"]
 [ext_resource type="Texture2D" uid="uid://7bfr2xq3ooo2" path="res://Assets/Cenario 1/Tiles/Floor 2.png" id="2_47yaq"]
 [ext_resource type="PackedScene" uid="uid://bxlmmfbuor0a8" path="res://Prefabs/key_life.tscn" id="3_isvwd"]
@@ -305,6 +306,7 @@ pattern_3 = SubResource("TileMapPattern_ml3w3")
 pattern_4 = SubResource("TileMapPattern_272ca")
 
 [node name="world-01" type="Node2D"]
+script = ExtResource("1_pt7li")
 
 [node name="Level" type="TileMap" parent="."]
 position = Vector2(3, 0)
