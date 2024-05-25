@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://srwqvr43mvwa"]
+[gd_scene load_steps=14 format=3 uid="uid://srwqvr43mvwa"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fm1ci"]
+[ext_resource type="Texture2D" uid="uid://bypmioaxvn4x8" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM HURT.png" id="2_cla2n"]
 [ext_resource type="Texture2D" uid="uid://ckqtqrmgox878" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM IDLE.png" id="2_uttgj"]
 [ext_resource type="Texture2D" uid="uid://cxrsbhj1qm6se" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM JUMP.png" id="3_x0x1u"]
 [ext_resource type="Texture2D" uid="uid://i8apd6xrydki" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM RUN.png" id="4_4jtwv"]
@@ -27,6 +28,14 @@ region = Rect2(100, 0, 100, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nkxvr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cla2n")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ukp20")
@@ -71,7 +80,7 @@ script = ExtResource("1_fm1ci")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nkxvr")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
