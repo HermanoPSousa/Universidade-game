@@ -8,12 +8,13 @@ const JUMP_FORCE = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var is_hurted := false
-var player_life := 5
 var knockback_vector := Vector2.ZERO
 var direction
 
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
+
+signal player_has_died()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -47,7 +48,7 @@ func _physics_process(delta):
 func _on_hurtbox_body_entered(body):
 	#if body.is_in_group("enemies"):
 	#	queue_free()
-	if player_life < 0:
+	if Globals.player_life < 0:
 		queue_free()
 	else:
 		if $ray_right.is_colliding():
@@ -60,13 +61,20 @@ func follow_camera(camera):
 	remote_transform.remote_path = camera_path
 	
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
-	player_life -= 1
+	
+	if Globals.player_life > 0:
+		Globals.player_life -= 1
+	else:
+		queue_free()
+		emit_signal("player_has_died")
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
 		
 		var knockback_tween := get_tree().create_tween()
 		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		
+		#$player_fx.play()
 		animation.modulate = Color(1, 0, 0, 1)
 		knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
 	

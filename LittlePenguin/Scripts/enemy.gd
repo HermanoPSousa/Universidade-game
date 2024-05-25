@@ -29,7 +29,6 @@ func _physics_process(delta):
 		texture.flip_h = false
 		
 	velocity.x = direction * SPEED * delta
-	Globals.score += 100
 	move_and_slide()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://boib0utmnoh5s"]
+[gd_scene load_steps=30 format=3 uid="uid://boib0utmnoh5s"]
 
 [ext_resource type="Texture2D" uid="uid://bvuqri2is3tq4" path="res://Assets/Cenario 1/Tiles/Floor 3.png" id="1_bvjmq"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_q55ny"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://msuxsi35106y" path="res://Assets/Cenario 1/Elements/COIN 08.png" id="22_rfb0g"]
 [ext_resource type="Texture2D" uid="uid://8gf3krludal6" path="res://Assets/Cenario 1/Elements/PINGUIM LIFE.png" id="23_pa0m4"]
 [ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="24_2x40r"]
+[ext_resource type="AudioStream" uid="uid://bmlgyg7nonpma" path="res://Musics/736675__timouse__piano-loop_cminor_100bpm_mix-24_1_drums_erosion_wideanddirty.wav" id="26_sstna"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijt8m"]
 texture = ExtResource("1_bvjmq")
@@ -683,6 +684,12 @@ frame_7/duration = 1.0
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_q55ny")
 
+[node name="world_fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_sstna")
+volume_db = 5.442
+autoplay = true
+max_distance = 4000.0
+
 [node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jeyb3")
 collision_animatable = true
@@ -856,6 +863,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("15_b7naq")
+default_minutes = 2
+default_seconds = 59
+
+[node name="clock_timer" type="Timer" parent="HUD/control"]
+autostart = true
 
 [node name="container" type="MarginContainer" parent="HUD/control"]
 layout_mode = 1
@@ -902,7 +914,7 @@ theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("24_2x40r")
 theme_override_font_sizes/font_size = 30
-text = "TIME: "
+text = "TIME"
 vertical_alignment = 1
 
 [node name="timer_counter" type="Label" parent="HUD/control/container/timer_container"]
@@ -912,7 +924,6 @@ theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("24_2x40r")
 theme_override_font_sizes/font_size = 30
-text = "00:00"
 vertical_alignment = 1
 
 [node name="score_container" type="HBoxContainer" parent="HUD/control/container"]
@@ -970,3 +981,5 @@ theme_override_fonts/font = ExtResource("24_2x40r")
 theme_override_font_sizes/font_size = 30
 text = "03"
 vertical_alignment = 1
+
+[connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

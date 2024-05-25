@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bj8keme8575vt"]
+[gd_scene load_steps=20 format=3 uid="uid://bj8keme8575vt"]
 
 [ext_resource type="Texture2D" uid="uid://cluokh3mbc5ac" path="res://Assets/Cenario 1/Elements/COIN.png" id="1_pkaxd"]
 [ext_resource type="Texture2D" uid="uid://ba78fcigbh8so" path="res://Assets/Cenario 1/Effects/NEW SPARKLING LIGHTS.png" id="2_t6wuu"]
+[ext_resource type="AudioStream" uid="uid://6yr0h1uleh52" path="res://Sounds/game-start_Pixabay.mp3" id="3_5ih8w"]
 
 [sub_resource type="GDScript" id="GDScript_byulk"]
 script/source = "extends Area2D
@@ -22,6 +23,7 @@ func _process(delta):
 func _on_body_entered(body):
 	$anim.play(\"collect\")
 	Globals.coins += coins
+	$coin_fx.play()
 
 
 func _on_anim_animation_finished():
@@ -148,6 +150,9 @@ frame_progress = 1.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_21os7")
+
+[node name="coin_fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5ih8w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

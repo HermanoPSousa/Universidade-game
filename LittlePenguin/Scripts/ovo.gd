@@ -12,8 +12,11 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	#$ovo_fx.play()
 	$anim.play("collect")
+	
 
 
 func _on_anim_animation_finished():
 	queue_free()
+	

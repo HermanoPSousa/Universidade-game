@@ -13,7 +13,12 @@ func _process(delta):
 
 func _on_body_entered(body):
 	$anim.play("collect")
+	$pinguim_fx.play()
+	$fish_fx.play()
+	
+	
 
 
 func _on_anim_animation_finished():
+	#$pinguim_fx.play()
 	queue_free()
