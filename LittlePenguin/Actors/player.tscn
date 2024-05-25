@@ -91,4 +91,12 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="remote" type="RemoteTransform2D" parent="."]
 
+[node name="ray_right" type="RayCast2D" parent="."]
+target_position = Vector2(38, 0)
+collision_mask = 4
+
+[node name="ray_left" type="RayCast2D" parent="."]
+target_position = Vector2(-37, 0)
+collision_mask = 4
+
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

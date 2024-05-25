@@ -793,7 +793,25 @@ editor_draw_limits = true
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy" parent="enemies" instance=ExtResource("13_3ws6b")]
-position = Vector2(576, 440)
+position = Vector2(1160, 472)
 
 [node name="enemy2" parent="enemies" instance=ExtResource("13_3ws6b")]
-position = Vector2(976, 624)
+position = Vector2(784, 632)
+
+[node name="enemy3" parent="enemies" instance=ExtResource("13_3ws6b")]
+position = Vector2(3184, 864)
+
+[node name="enemy4" parent="enemies" instance=ExtResource("13_3ws6b")]
+position = Vector2(1752, 864)
+
+[node name="enemy7" parent="enemies" instance=ExtResource("13_3ws6b")]
+position = Vector2(2480, 712)
+
+[node name="enemy6" parent="enemies" instance=ExtResource("13_3ws6b")]
+position = Vector2(3088, 232)
+
+[node name="enemy5" parent="enemies" instance=ExtResource("13_3ws6b")]
+position = Vector2(4112, 864)
+
+[node name="enemy8" parent="enemies" instance=ExtResource("13_3ws6b")]
+position = Vector2(4168, 216)
