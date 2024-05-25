@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://boib0utmnoh5s"]
+[gd_scene load_steps=29 format=3 uid="uid://boib0utmnoh5s"]
 
 [ext_resource type="Texture2D" uid="uid://bvuqri2is3tq4" path="res://Assets/Cenario 1/Tiles/Floor 3.png" id="1_bvjmq"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_q55ny"]
@@ -14,6 +14,17 @@
 [ext_resource type="PackedScene" uid="uid://dofyywp2rc0v1" path="res://Prefabs/fish.tscn" id="10_jq7t0"]
 [ext_resource type="PackedScene" uid="uid://bk2n5dc637qos" path="res://Prefabs/ovo.tscn" id="12_e65d8"]
 [ext_resource type="PackedScene" uid="uid://dv4hcethtmjmc" path="res://Actors/enemy.tscn" id="13_3ws6b"]
+[ext_resource type="Script" path="res://Scripts/hud_manager.gd" id="15_b7naq"]
+[ext_resource type="Texture2D" uid="uid://doc2rrsmp3pic" path="res://Assets/Cenario 1/Elements/COIN 01.png" id="15_nfejm"]
+[ext_resource type="Texture2D" uid="uid://coa6nc2moqnsx" path="res://Assets/Cenario 1/Elements/COIN 02.png" id="16_vb8xi"]
+[ext_resource type="Texture2D" uid="uid://dx7hiqswvs38f" path="res://Assets/Cenario 1/Elements/COIN 03.png" id="17_vxf48"]
+[ext_resource type="Texture2D" uid="uid://cofwbkbl7qwby" path="res://Assets/Cenario 1/Elements/COIN 04.png" id="18_hrgmb"]
+[ext_resource type="Texture2D" uid="uid://b3d472k6q4kee" path="res://Assets/Cenario 1/Elements/COIN 05.png" id="19_ytxpt"]
+[ext_resource type="Texture2D" uid="uid://cb6j3h77pp0qn" path="res://Assets/Cenario 1/Elements/COIN 06.png" id="20_0ou4h"]
+[ext_resource type="Texture2D" uid="uid://cvio8y3ppdl8w" path="res://Assets/Cenario 1/Elements/COIN 07.png" id="21_ncl08"]
+[ext_resource type="Texture2D" uid="uid://msuxsi35106y" path="res://Assets/Cenario 1/Elements/COIN 08.png" id="22_rfb0g"]
+[ext_resource type="Texture2D" uid="uid://8gf3krludal6" path="res://Assets/Cenario 1/Elements/PINGUIM LIFE.png" id="23_pa0m4"]
+[ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="24_2x40r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijt8m"]
 texture = ExtResource("1_bvjmq")
@@ -650,6 +661,25 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_ijt8m")
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_eyt76"]
+frames = 8
+speed_scale = 4.0
+frame_0/texture = ExtResource("15_nfejm")
+frame_1/texture = ExtResource("16_vb8xi")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("17_vxf48")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("18_hrgmb")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("19_ytxpt")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("20_0ou4h")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("21_ncl08")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("22_rfb0g")
+frame_7/duration = 1.0
+
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_q55ny")
 
@@ -815,3 +845,128 @@ position = Vector2(4112, 864)
 
 [node name="enemy8" parent="enemies" instance=ExtResource("13_3ws6b")]
 position = Vector2(4168, 216)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_b7naq")
+
+[node name="container" type="MarginContainer" parent="HUD/control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="coins_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="coins_icon" type="TextureRect" parent="HUD/control/container/coins_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AnimatedTexture_eyt76")
+
+[node name="coins_counter" type="Label" parent="HUD/control/container/coins_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "0000"
+vertical_alignment = 1
+
+[node name="timer_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="timer_label" type="Label" parent="HUD/control/container/timer_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "TIME: "
+vertical_alignment = 1
+
+[node name="timer_counter" type="Label" parent="HUD/control/container/timer_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "00:00"
+vertical_alignment = 1
+
+[node name="score_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="score_label" type="Label" parent="HUD/control/container/score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "SCORE: "
+vertical_alignment = 1
+
+[node name="score_counter" type="Label" parent="HUD/control/container/score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "000000"
+vertical_alignment = 1
+
+[node name="life_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="life_icon" type="TextureRect" parent="HUD/control/container/life_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("23_pa0m4")
+
+[node name="life_separator" type="Label" parent="HUD/control/container/life_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "x"
+vertical_alignment = 1
+
+[node name="life_counter" type="Label" parent="HUD/control/container/life_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("24_2x40r")
+theme_override_font_sizes/font_size = 30
+text = "03"
+vertical_alignment = 1

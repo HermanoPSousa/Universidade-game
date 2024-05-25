@@ -29,10 +29,13 @@ func _physics_process(delta):
 		texture.flip_h = false
 		
 	velocity.x = direction * SPEED * delta
-
+	Globals.score += 100
 	move_and_slide()
 
 
 func _on_anim_animation_finished(anim_name):
 	if anim_name == "hurt":
+		#Globals.score += 100
 		queue_free()
+		
+			
