@@ -1,52 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv4hcethtmjmc"]
+[gd_scene load_steps=12 format=3 uid="uid://dv4hcethtmjmc"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_6r2qq"]
 [ext_resource type="Texture2D" uid="uid://dfwu1p3kwpcka" path="res://Assets/Cenario 1/Characters/ENEMIE/PINGUIM ENEMY RUN.png" id="1_udxv5"]
 [ext_resource type="Texture2D" uid="uid://u4pguhv17h28" path="res://Assets/Cenario 1/Characters/ENEMIE/PINGUIM ENEMY HURT.png" id="3_prn1g"]
+[ext_resource type="PackedScene" uid="uid://dvfckf8lm0jrn" path="res://Prefabs/hitbox.tscn" id="4_8mdnb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pfks"]
-size = Vector2(32, 53)
-
-[sub_resource type="Animation" id="Animation_gy5xa"]
-resource_name = "walk"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_udxv5")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("texture:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("texture:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryk6p"]
+size = Vector2(64, 41)
 
 [sub_resource type="Animation" id="Animation_oajyc"]
 length = 0.001
@@ -169,6 +129,47 @@ tracks/2/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_gy5xa"]
+resource_name = "walk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_udxv5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_spxqp"]
 _data = {
 "RESET": SubResource("Animation_oajyc"),
@@ -177,7 +178,10 @@ _data = {
 "walk": SubResource("Animation_gy5xa")
 }
 
-[node name="enemy" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f332f"]
+size = Vector2(32, 20)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_6r2qq")
@@ -187,8 +191,8 @@ texture = ExtResource("1_udxv5")
 hframes = 2
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_2pfks")
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ryk6p")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -201,3 +205,11 @@ speed_scale = 0.3
 position = Vector2(0, -16)
 target_position = Vector2(-39, 0)
 collision_mask = 6
+
+[node name="hitbox" parent="." instance=ExtResource("4_8mdnb")]
+
+[node name="collision" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -56)
+shape = SubResource("RectangleShape2D_f332f")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

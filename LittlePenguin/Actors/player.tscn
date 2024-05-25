@@ -1,13 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://srwqvr43mvwa"]
+[gd_scene load_steps=13 format=3 uid="uid://srwqvr43mvwa"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_tgm30"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_fm1ci"]
 [ext_resource type="Texture2D" uid="uid://ckqtqrmgox878" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM IDLE.png" id="2_uttgj"]
 [ext_resource type="Texture2D" uid="uid://cxrsbhj1qm6se" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM JUMP.png" id="3_x0x1u"]
 [ext_resource type="Texture2D" uid="uid://i8apd6xrydki" path="res://Assets/Cenario 1/Characters/PLAYER/PINGUIM RUN.png" id="4_4jtwv"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b7wq1"]
-radius = 35.0
-height = 84.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukp20"]
 atlas = ExtResource("2_uttgj")
@@ -62,25 +58,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc1oc"]
+size = Vector2(59, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osmsu"]
+size = Vector2(70, 80)
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(36, 83)
-collision_mask = 2
-script = ExtResource("1_tgm30")
-
-[node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -22)
-shape = SubResource("CapsuleShape2D_b7wq1")
-
-[node name="camera" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_right = 4608
-limit_bottom = 963
-editor_draw_limits = true
+collision_mask = 22
+script = ExtResource("1_fm1ci")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nkxvr")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -22.5)
+shape = SubResource("RectangleShape2D_hc1oc")
+
 [node name="animator" type="AnimationPlayer" parent="."]
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collision" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(1, -28)
+shape = SubResource("RectangleShape2D_osmsu")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="remote" type="RemoteTransform2D" parent="."]
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
