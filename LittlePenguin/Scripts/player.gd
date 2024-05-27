@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var player_died = $player_died
+@onready var player_jump = $player_jump as AudioStreamPlayer
 
 const SPEED = 300.0
 const JUMP_FORCE = -400.0
@@ -25,6 +27,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		is_jumping = true
+		player_jump.play()
 	elif is_on_floor():
 		is_jumping = false
 
@@ -48,7 +51,8 @@ func _physics_process(delta):
 func _on_hurtbox_body_entered(body):
 	#if body.is_in_group("enemies"):
 	#	queue_free()
-	if Globals.player_life < 0:
+	if Globals.player_life < 0:	
+		player_died.play()	
 		queue_free()
 	else:
 		if $ray_right.is_colliding():

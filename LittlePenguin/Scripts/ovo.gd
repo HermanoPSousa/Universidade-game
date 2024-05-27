@@ -1,5 +1,8 @@
 extends Area2D
 
+@onready var transition = $"../transition"
+@export var next_level : String = ""
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,11 +15,16 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	#$ovo_fx.play()
+	
 	$anim.play("collect")
+	if body.name == "player" and !next_level == "":
+		transition.change_scene(next_level)
+	else:
+		print("scene no load")
 	
 
 
 func _on_anim_animation_finished():
+	$ovo_fx.play()
 	queue_free()
 	

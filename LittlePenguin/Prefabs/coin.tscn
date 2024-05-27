@@ -7,6 +7,8 @@
 [sub_resource type="GDScript" id="GDScript_byulk"]
 script/source = "extends Area2D
 
+@onready var coin_fx = $coin_fx as AudioStreamPlayer
+
 
 var coins := 1
 
@@ -22,8 +24,11 @@ func _process(delta):
 
 func _on_body_entered(body):
 	$anim.play(\"collect\")
-	Globals.coins += coins
 	$coin_fx.play()
+	#evita a colisão dupla de moedas
+	await $collision.call_deferred(\"queue_free\")
+	Globals.coins += coins
+	
 
 
 func _on_anim_animation_finished():
@@ -151,7 +156,7 @@ frame_progress = 1.0
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_21os7")
 
-[node name="coin_fx" type="AudioStreamPlayer2D" parent="."]
+[node name="coin_fx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5ih8w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

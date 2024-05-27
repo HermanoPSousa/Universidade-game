@@ -1,0 +1,182 @@
+[gd_scene load_steps=8 format=3 uid="uid://bt6n68qb33rkf"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_mranq"]
+[ext_resource type="Texture2D" uid="uid://bw5e8bvkovi1o" path="res://Assets/GAME OVER.png" id="1_rgipp"]
+[ext_resource type="Theme" uid="uid://b47m473ewv6sf" path="res://Components/pause_menu.tres" id="2_h5n7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ua3y"]
+
+[sub_resource type="Animation" id="Animation_ahgyo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yeuyn"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gv1my"]
+_data = {
+"RESET": SubResource("Animation_ahgyo"),
+"fade_in": SubResource("Animation_yeuyn")
+}
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mranq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -641.0
+offset_top = -536.0
+offset_right = 641.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver_Title" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rgipp")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/GameOver_Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -233.0
+offset_right = 1.5
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ua3y")
+
+[node name="Restart_Btn" type="Button" parent="VBoxContainer/GameOver_Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.5
+offset_top = -260.0
+offset_right = 84.5
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_h5n7s")
+text = "RESTART"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/GameOver_Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -166.0
+offset_right = 1.5
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ua3y")
+
+[node name="Quit_Btn" type="Button" parent="VBoxContainer/GameOver_Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -193.0
+offset_right = 96.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_h5n7s")
+text = "QUIT GAME"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gv1my")
+}
+autoplay = "fade_in"
+
+[connection signal="pressed" from="VBoxContainer/GameOver_Title/Restart_Btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/GameOver_Title/Quit_Btn" to="." method="_on_quit_btn_pressed"]
