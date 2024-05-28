@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var is_hurted := false
 var knockback_vector := Vector2.ZERO
+var knockback_power := 20
 var direction
 
 @onready var animation := $anim as AnimatedSprite2D
@@ -49,42 +50,47 @@ func _physics_process(delta):
 	
 
 func _on_hurtbox_body_entered(body):
+	var knockback = Vector2( (global_position.x - body.global_position.x) * knockback_power, - 200)
+	take_damage(knockback)
 	#if body.is_in_group("enemies"):
 	#	queue_free()
 	if Globals.player_life < 0:	
 		player_died.play()	
 		queue_free()
-	else:
-		if $ray_right.is_colliding():
-			take_damage(Vector2(-200, -200))
-		elif $ray_left.is_colliding():
-			take_damage(Vector2(200, -200))
+		
+	#else:
+		#if $ray_right.is_colliding():
+			#take_damage(Vector2(-200, -200))
+		#elif $ray_left.is_colliding():
+			#take_damage(Vector2(200, -200))
 
 func follow_camera(camera):
 	var camera_path = camera.get_path()		
 	remote_transform.remote_path = camera_path
+	
+	
 	
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	
 	if Globals.player_life > 0:
 		Globals.player_life -= 1
 	else:
-		queue_free()
+		queue_free()		
 		emit_signal("player_has_died")
+		
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
-		
 		var knockback_tween := get_tree().create_tween()
 		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-		
-		#$player_fx.play()
 		animation.modulate = Color(1, 0, 0, 1)
 		knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
 	
 	is_hurted = true
 	await get_tree().create_timer(.3).timeout
 	is_hurted = false
+	
+	
 	
 func _set_state():
 	var state = "idle"

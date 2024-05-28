@@ -20,3 +20,6 @@ func _process(delta):
 func reload_game():
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
+
+func game_over():
+	get_tree().change_scene_to_file("res://Prefabs/game_over.tscn")

@@ -175,13 +175,9 @@ grow_vertical = 2
 script = ExtResource("1_jjtsa")
 
 [node name="bg" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = -222.0
-offset_top = 139.0
-offset_right = 1502.0
-offset_bottom = 821.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 960.0
 texture = ExtResource("2_072g4")
 expand_mode = 2
 
@@ -213,31 +209,33 @@ texture = ExtResource("3_f65os")
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7ba6j")
-text = "START"
+text = "                           START                            "
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_47gnh")
 
 [node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7ba6j")
-text = "CREDITS"
+text = "                         CREDITS                           "
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_47gnh")
 
 [node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7ba6j")
-text = "QUIT GAME"
+text = "                       QUIT GAME                         "
 
 [node name="moji" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 texture = ExtResource("5_ejt3q")
 expand_mode = 2
 

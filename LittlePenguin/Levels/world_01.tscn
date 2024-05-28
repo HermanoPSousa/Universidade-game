@@ -916,9 +916,6 @@ frame_7/duration = 1.0
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_q55ny")
 
-[node name="world_fx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("31_5hvot")
-
 [node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jeyb3")
 collision_animatable = true
@@ -1106,7 +1103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("15_b7naq")
-default_seconds = 59
+default_minutes = 5
 
 [node name="clock_timer" type="Timer" parent="HUD/control"]
 autostart = true
@@ -1160,7 +1157,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("24_2x40r")
 theme_override_font_sizes/font_size = 30
-text = "TIME:"
+text = "time:"
 vertical_alignment = 1
 
 [node name="timer_counter" type="Label" parent="HUD/control/container/timer_container"]
@@ -1188,7 +1185,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("24_2x40r")
 theme_override_font_sizes/font_size = 30
-text = "SCORE: "
+text = "score: "
 vertical_alignment = 1
 
 [node name="score_counter" type="Label" parent="HUD/control/container/score_container"]
@@ -1237,5 +1234,8 @@ theme_override_fonts/font = ExtResource("24_2x40r")
 theme_override_font_sizes/font_size = 30
 text = "03"
 vertical_alignment = 1
+
+[node name="world_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_5hvot")
 
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]
