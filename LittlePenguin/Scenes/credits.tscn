@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjke0sxe6orgx"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_av775"]
+[ext_resource type="Theme" uid="uid://bx45csdc1jpf0" path="res://defaultButton.tres" id="1_t8fqb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_av775")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1232.0
+offset_bottom = 912.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.643137)
+
+[node name="return_btn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4375
+anchor_top = 20.35
+anchor_right = 17.5625
+anchor_bottom = 21.325
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_t8fqb")
+theme_override_font_sizes/font_size = 30
+text = "Return"
+metadata/_edit_use_anchors_ = true
+
+[node name="credit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 1208.0
+offset_bottom = 216.0
+text = "Musics
+scene 1 :
+scene 2 :
+scene 3 :
+scene 4 :
+
+Songs
+coin   :
+heart :
+fish    :
+egg    :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="thanks" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 436.0
+offset_right = 1216.0
+offset_bottom = 719.0
+theme_override_colors/font_color = Color(0, 0.717647, 0.556863, 1)
+theme_override_font_sizes/font_size = 30
+text = "AGRADECIMENTOS
+
+    Ao:
+            Prof. Saulo Leite.
+            Graças a Deus e aos ensinamentos dele, 
+    eu me ingressei no mundo da criação de jogos."
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 171
+
+[connection signal="pressed" from="return_btn" to="." method="_on_return_btn_pressed"]

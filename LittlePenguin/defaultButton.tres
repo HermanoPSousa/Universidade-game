@@ -1,0 +1,58 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bx45csdc1jpf0"]
+
+[ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="1_ndhsh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7t5a"]
+bg_color = Color(1, 1, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.976471, 0.513726, 0, 1)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg35y"]
+bg_color = Color(0.294118, 0.443137, 0.419608, 0.882353)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.120155, 0.314557, 0.391715, 1)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp7nt"]
+bg_color = Color(0.94902, 0.54902, 0.0901961, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.661429, 0.252355, 0.0841791, 1)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sx78f"]
+bg_color = Color(1, 1, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.976471, 0.513726, 0, 1)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_ndhsh")
+Button/styles/focus = SubResource("StyleBoxFlat_r7t5a")
+Button/styles/hover = SubResource("StyleBoxFlat_kg35y")
+Button/styles/normal = SubResource("StyleBoxFlat_qp7nt")
+Button/styles/pressed = SubResource("StyleBoxFlat_sx78f")

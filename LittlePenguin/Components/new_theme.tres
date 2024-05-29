@@ -3,33 +3,33 @@
 [ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="1_5tnrg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcnlu"]
-bg_color = Color(0.94902, 0.941176, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+bg_color = Color(1, 1, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.94902, 0.54902, 0.0901961, 1)
 border_blend = true
 expand_margin_top = 5.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_damlp"]
-bg_color = Color(0.94902, 0.941176, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.94902, 0.54902, 0.0901961, 1)
+bg_color = Color(0.294118, 0.443137, 0.419608, 0.882353)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.120155, 0.314557, 0.391715, 1)
 border_blend = true
 expand_margin_top = 5.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtgje"]
 bg_color = Color(0.976471, 0.513726, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.661429, 0.252355, 0.0841791, 1)
 border_blend = true
 expand_margin_top = 5.0
@@ -37,10 +37,10 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4d3d"]
 bg_color = Color(0.94902, 0.941176, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.94902, 0.54902, 0.0901961, 1)
 border_blend = true
 expand_margin_top = 5.0
@@ -48,6 +48,7 @@ expand_margin_bottom = 2.0
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/fonts/font = ExtResource("1_5tnrg")
 Button/styles/focus = SubResource("StyleBoxFlat_wcnlu")
 Button/styles/hover = SubResource("StyleBoxFlat_damlp")

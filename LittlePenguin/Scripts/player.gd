@@ -50,19 +50,26 @@ func _physics_process(delta):
 	
 
 func _on_hurtbox_body_entered(body):
-	var knockback = Vector2( (global_position.x - body.global_position.x) * knockback_power, - 200)
-	take_damage(knockback)
+	#28/5 14:09
+	#var knockback = Vector2( (global_position.x - body.global_position.x) * knockback_power, - 200)
+	#take_damage(knockback)
+	
+	#anterior a 28/05
 	#if body.is_in_group("enemies"):
 	#	queue_free()
-	if Globals.player_life < 0:	
-		player_died.play()	
-		queue_free()
+	
+	#28/5 - 14:10
+	#if Globals.player_life < 0:	
+		#player_died.play()	
+		#queue_free()
 		
 	#else:
-		#if $ray_right.is_colliding():
-			#take_damage(Vector2(-200, -200))
-		#elif $ray_left.is_colliding():
-			#take_damage(Vector2(200, -200))
+	
+	#ativando em28/5-14:12
+	if $ray_right.is_colliding():
+		take_damage(Vector2(-200, -200))
+	elif $ray_left.is_colliding():
+		take_damage(Vector2(200, -200))
 
 func follow_camera(camera):
 	var camera_path = camera.get_path()		
@@ -81,14 +88,27 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
-		var knockback_tween := get_tree().create_tween()
+		print("knockback_force: " + str(knockback_force))
+		print("knockback_force: " + str(Vector2.ZERO))
+		
+		var knockback_tween := get_tree().create_tween()	
+		
+		print("knockback_tween: " + str(knockback_tween))	
+		print("knockback_vector : " + str(knockback_vector))	
+		print(self)
+		print ("Vector2.Zero" + str(Vector2.ZERO))
+		print("duration: " + str(duration))
+		
 		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 		animation.modulate = Color(1, 0, 0, 1)
 		knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
-	
-	is_hurted = true
-	await get_tree().create_timer(.3).timeout
-	is_hurted = false
+	else:
+		#is_hurted = true
+		#await get_tree().create_timer(.3).timeout
+		#is_hurted = false
+		print("senao")
+		print("knockback_force: " + str(knockback_force))
+		print("knockback_force: " + str(Vector2.ZERO))
 	
 	
 	
