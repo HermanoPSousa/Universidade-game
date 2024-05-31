@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://boib0utmnoh5s"]
+[gd_scene load_steps=31 format=3 uid="uid://boib0utmnoh5s"]
 
 [ext_resource type="Texture2D" uid="uid://bvuqri2is3tq4" path="res://Assets/Cenario 1/Tiles/Floor 3.png" id="1_bvjmq"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_q55ny"]
@@ -16,27 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://dofyywp2rc0v1" path="res://Prefabs/fish.tscn" id="10_jq7t0"]
 [ext_resource type="PackedScene" uid="uid://bk2n5dc637qos" path="res://Prefabs/ovo.tscn" id="12_e65d8"]
 [ext_resource type="PackedScene" uid="uid://dv4hcethtmjmc" path="res://Actors/enemy.tscn" id="13_3ws6b"]
-[ext_resource type="Script" path="res://Scripts/hud_manager.gd" id="15_b7naq"]
-[ext_resource type="Texture2D" uid="uid://doc2rrsmp3pic" path="res://Assets/Cenario 1/Elements/COIN 01.png" id="15_nfejm"]
-[ext_resource type="Texture2D" uid="uid://coa6nc2moqnsx" path="res://Assets/Cenario 1/Elements/COIN 02.png" id="16_vb8xi"]
 [ext_resource type="Shader" path="res://Shaders/transition2.gdshader" id="17_kqfcj"]
-[ext_resource type="Texture2D" uid="uid://dx7hiqswvs38f" path="res://Assets/Cenario 1/Elements/COIN 03.png" id="17_vxf48"]
-[ext_resource type="Texture2D" uid="uid://cofwbkbl7qwby" path="res://Assets/Cenario 1/Elements/COIN 04.png" id="18_hrgmb"]
-[ext_resource type="Texture2D" uid="uid://b3d472k6q4kee" path="res://Assets/Cenario 1/Elements/COIN 05.png" id="19_ytxpt"]
-[ext_resource type="Texture2D" uid="uid://cb6j3h77pp0qn" path="res://Assets/Cenario 1/Elements/COIN 06.png" id="20_0ou4h"]
-[ext_resource type="Texture2D" uid="uid://cvio8y3ppdl8w" path="res://Assets/Cenario 1/Elements/COIN 07.png" id="21_ncl08"]
-[ext_resource type="Texture2D" uid="uid://msuxsi35106y" path="res://Assets/Cenario 1/Elements/COIN 08.png" id="22_rfb0g"]
-[ext_resource type="Texture2D" uid="uid://8gf3krludal6" path="res://Assets/Cenario 1/Elements/PINGUIM LIFE.png" id="23_pa0m4"]
-[ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="24_2x40r"]
+[ext_resource type="PackedScene" uid="uid://nao1635g35gu" path="res://Prefabs/hud.tscn" id="20_op4so"]
+[ext_resource type="PackedScene" uid="uid://b0ofvcxdtfdtt" path="res://Prefabs/abyss.tscn" id="24_v1qn2"]
+[ext_resource type="PackedScene" uid="uid://ey0cyg8ovekk" path="res://Prefabs/scene_transition.tscn" id="25_ajhfg"]
 [ext_resource type="Script" path="res://Scripts/transition.gd" id="28_hxabk"]
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="29_f7m58"]
 [ext_resource type="AudioStream" uid="uid://c8x7o5emlss60" path="res://Musics/Cenario-01.mp3" id="31_wgsi7"]
 [ext_resource type="Script" path="res://Scripts/spikes.gd" id="32_e0pyl"]
 [ext_resource type="Texture2D" uid="uid://b6107ro3f5wnx" path="res://Assets/Cenario 1/Denger/CACTOS5.png" id="33_b0p7f"]
-[ext_resource type="Script" path="res://Scripts/abyss.gd" id="34_wbi8g"]
-[ext_resource type="Script" path="res://Scripts/scene_transition.gd" id="35_enyik"]
-[ext_resource type="Shader" path="res://Shaders/transition3.gdshader" id="35_xbywh"]
-[ext_resource type="Script" path="res://Scripts/transition3.gd" id="36_mxe3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijt8m"]
 texture = ExtResource("1_bvjmq")
@@ -930,37 +918,8 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(1, 1, 1, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_eyt76"]
-frames = 8
-speed_scale = 4.0
-frame_0/texture = ExtResource("15_nfejm")
-frame_1/texture = ExtResource("16_vb8xi")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("17_vxf48")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("18_hrgmb")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("19_ytxpt")
-frame_4/duration = 1.0
-frame_5/texture = ExtResource("20_0ou4h")
-frame_5/duration = 1.0
-frame_6/texture = ExtResource("21_ncl08")
-frame_6/duration = 1.0
-frame_7/texture = ExtResource("22_rfb0g")
-frame_7/duration = 1.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ik7g"]
 size = Vector2(320, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eenou"]
-size = Vector2(394, 122)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ct053"]
-shader = ExtResource("35_xbywh")
-shader_parameter/lines = 40.0
-shader_parameter/threshold = 1.0
-shader_parameter/line_color_a = Color(0.882353, 0.333333, 0.0705882, 1)
-shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_q55ny")
@@ -1053,7 +1012,7 @@ position = Vector2(4120, 192)
 [node name="moving_platform" parent="platforms" instance=ExtResource("8_e43p6")]
 position = Vector2(573, 82)
 move_speed = 5.0
-distance = 3810
+distance = 3800
 
 [node name="moving_platform2" parent="platforms" instance=ExtResource("8_e43p6")]
 position = Vector2(1190, 700)
@@ -1152,147 +1111,7 @@ script = ExtResource("29_f7m58")
 [node name="pause_menu" parent="." instance=ExtResource("2_3plmg")]
 visible = false
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="control" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("15_b7naq")
-default_minutes = 5
-
-[node name="clock_timer" type="Timer" parent="HUD/control"]
-autostart = true
-
-[node name="container" type="MarginContainer" parent="HUD/control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="coins_container" type="HBoxContainer" parent="HUD/control/container"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="coins_icon" type="TextureRect" parent="HUD/control/container/coins_container"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = SubResource("AnimatedTexture_eyt76")
-
-[node name="coins_counter" type="Label" parent="HUD/control/container/coins_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="timer_container" type="HBoxContainer" parent="HUD/control/container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="timer_label" type="Label" parent="HUD/control/container/timer_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-text = "time:"
-vertical_alignment = 1
-
-[node name="timer_counter" type="Label" parent="HUD/control/container/timer_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-vertical_alignment = 1
-
-[node name="score_container" type="HBoxContainer" parent="HUD/control/container"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-
-[node name="score_label" type="Label" parent="HUD/control/container/score_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-text = "score: "
-vertical_alignment = 1
-
-[node name="score_counter" type="Label" parent="HUD/control/container/score_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-text = "000000"
-vertical_alignment = 1
-
-[node name="life_container" type="HBoxContainer" parent="HUD/control/container"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="life_icon" type="TextureRect" parent="HUD/control/container/life_container"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("23_pa0m4")
-
-[node name="life_separator" type="Label" parent="HUD/control/container/life_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-text = "x"
-vertical_alignment = 1
-
-[node name="life_counter" type="Label" parent="HUD/control/container/life_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("24_2x40r")
-theme_override_font_sizes/font_size = 30
-text = "03"
-vertical_alignment = 1
+[node name="HUD" parent="." instance=ExtResource("20_op4so")]
 
 [node name="world_fx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_wgsi7")
@@ -1312,27 +1131,8 @@ shape = SubResource("RectangleShape2D_7ik7g")
 position = Vector2(304, 0)
 texture = ExtResource("33_b0p7f")
 
-[node name="abyss" type="Area2D" parent="."]
-position = Vector2(3760, 1208)
-script = ExtResource("34_wbi8g")
+[node name="abyss" parent="." instance=ExtResource("24_v1qn2")]
 
-[node name="collision" type="CollisionShape2D" parent="abyss"]
-position = Vector2(-187, -51)
-shape = SubResource("RectangleShape2D_eenou")
+[node name="scene_transition" parent="." instance=ExtResource("25_ajhfg")]
 
-[node name="scene_transition" type="CanvasLayer" parent="."]
-script = ExtResource("35_enyik")
-
-[node name="background" type="ColorRect" parent="scene_transition"]
-material = SubResource("ShaderMaterial_ct053")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("36_mxe3l")
-
-[connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]
 [connection signal="body_entered" from="spikes" to="spikes" method="_on_body_entered"]
-[connection signal="body_entered" from="abyss" to="abyss" method="_on_body_entered"]

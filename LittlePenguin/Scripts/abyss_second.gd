@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var collision = $collision as CollisionShape2D
+@onready var collision_second = $collision_second as CollisionShape2D
 
 
 # Called when the node enters the scene tree for the first time.

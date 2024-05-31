@@ -94,7 +94,7 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 			knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 			animation.modulate = Color(1, 0, 0, 1)
 			knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
-			flag_alert = 0
+			#flag_alert = 0
 			
 		elif Globals.player_life ==0:
 			

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03beecqut3xa"]
+
+[ext_resource type="Script" path="res://Scripts/abyss_second.gd" id="1_j630f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gm7x"]
+size = Vector2(4769, 58)
+
+[node name="abyss_second" type="Area2D"]
+script = ExtResource("1_j630f")
+
+[node name="collision_second" type="CollisionShape2D" parent="."]
+position = Vector2(2359.5, 1056)
+shape = SubResource("RectangleShape2D_5gm7x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

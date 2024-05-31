@@ -1,0 +1,176 @@
+[gd_scene load_steps=13 format=3 uid="uid://nao1635g35gu"]
+
+[ext_resource type="Script" path="res://Scripts/hud_manager.gd" id="1_5mjy6"]
+[ext_resource type="Texture2D" uid="uid://doc2rrsmp3pic" path="res://Assets/Cenario 1/Elements/COIN 01.png" id="2_d5nep"]
+[ext_resource type="Texture2D" uid="uid://coa6nc2moqnsx" path="res://Assets/Cenario 1/Elements/COIN 02.png" id="3_bk835"]
+[ext_resource type="Texture2D" uid="uid://dx7hiqswvs38f" path="res://Assets/Cenario 1/Elements/COIN 03.png" id="4_e6yfx"]
+[ext_resource type="Texture2D" uid="uid://cofwbkbl7qwby" path="res://Assets/Cenario 1/Elements/COIN 04.png" id="5_spfpa"]
+[ext_resource type="Texture2D" uid="uid://b3d472k6q4kee" path="res://Assets/Cenario 1/Elements/COIN 05.png" id="6_fs2ue"]
+[ext_resource type="Texture2D" uid="uid://cb6j3h77pp0qn" path="res://Assets/Cenario 1/Elements/COIN 06.png" id="7_5stiu"]
+[ext_resource type="Texture2D" uid="uid://cvio8y3ppdl8w" path="res://Assets/Cenario 1/Elements/COIN 07.png" id="8_v34se"]
+[ext_resource type="Texture2D" uid="uid://msuxsi35106y" path="res://Assets/Cenario 1/Elements/COIN 08.png" id="9_afjli"]
+[ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="10_kfca8"]
+[ext_resource type="Texture2D" uid="uid://8gf3krludal6" path="res://Assets/Cenario 1/Elements/PINGUIM LIFE.png" id="11_w1v0r"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_eyt76"]
+frames = 8
+speed_scale = 4.0
+frame_0/texture = ExtResource("2_d5nep")
+frame_1/texture = ExtResource("3_bk835")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_e6yfx")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_spfpa")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("6_fs2ue")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("7_5stiu")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("8_v34se")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("9_afjli")
+frame_7/duration = 1.0
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5mjy6")
+default_minutes = 5
+
+[node name="clock_timer" type="Timer" parent="control"]
+autostart = true
+
+[node name="container" type="MarginContainer" parent="control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="coins_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="coins_icon" type="TextureRect" parent="control/container/coins_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AnimatedTexture_eyt76")
+
+[node name="coins_counter" type="Label" parent="control/container/coins_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+text = "0000"
+vertical_alignment = 1
+
+[node name="timer_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="timer_label" type="Label" parent="control/container/timer_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+text = "time:"
+vertical_alignment = 1
+
+[node name="timer_counter" type="Label" parent="control/container/timer_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+
+[node name="score_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="score_label" type="Label" parent="control/container/score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+text = "score: "
+vertical_alignment = 1
+
+[node name="score_counter" type="Label" parent="control/container/score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+text = "000000"
+vertical_alignment = 1
+
+[node name="life_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="life_icon" type="TextureRect" parent="control/container/life_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("11_w1v0r")
+
+[node name="life_separator" type="Label" parent="control/container/life_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+text = "x"
+vertical_alignment = 1
+
+[node name="life_counter" type="Label" parent="control/container/life_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 1, 0.247059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("10_kfca8")
+theme_override_font_sizes/font_size = 30
+text = "03"
+vertical_alignment = 1
+
+[connection signal="timeout" from="control/clock_timer" to="control" method="_on_clock_timer_timeout"]
