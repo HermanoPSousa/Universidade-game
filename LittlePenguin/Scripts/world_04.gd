@@ -6,8 +6,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player.follow_camera(camera)
-	player.player_has_died.connect(reload_game)
-	#control.time_is_up.connect(reload_game)
+	player.player_has_died.connect(game_over)
+	control.time_is_up.connect(game_over)
 	Globals.coins = 0
 	Globals.score = 0
 	Globals.player_life = 3

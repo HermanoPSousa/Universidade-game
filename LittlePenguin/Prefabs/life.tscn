@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5psl17ifp4fi"]
+[gd_scene load_steps=12 format=3 uid="uid://b5psl17ifp4fi"]
 
 [ext_resource type="Texture2D" uid="uid://5nfye50r4mpy" path="res://Assets/Cenario 1/Elements/CORACAO.png" id="1_6bdo6"]
 [ext_resource type="Texture2D" uid="uid://bqxda7f7l50hu" path="res://Assets/Cenario 1/Effects/CORACAO TRANSPARENTE.png" id="1_qp6v8"]
 [ext_resource type="Script" path="res://Scripts/life.gd" id="1_yef0x"]
+[ext_resource type="AudioStream" uid="uid://fbhq3lox2xno" path="res://Musics/Hearth.mp3" id="4_0jhag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nmpq"]
 atlas = ExtResource("1_qp6v8")
@@ -67,6 +68,9 @@ autoplay = "idle"
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_qmjqv")
+
+[node name="life_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0jhag")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

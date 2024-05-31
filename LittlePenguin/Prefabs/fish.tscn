@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cdhjutx5ecoe" path="res://Assets/Cenario 1/Elements/PEIXE.png" id="1_eo2kg"]
 [ext_resource type="Script" path="res://Scripts/fish.gd" id="1_j5tcd"]
 [ext_resource type="Texture2D" uid="uid://c4u6k2mwngw8v" path="res://Assets/Cenario 1/Effects/EFEITO OVO.png" id="1_ni0sy"]
-[ext_resource type="AudioStream" uid="uid://c8p68xoah58vw" path="res://Sounds/comendo peixe.mp3" id="4_6btfo"]
+[ext_resource type="AudioStream" uid="uid://cx8j75asmdbcq" path="res://Musics/Sucking.mp3" id="4_sxnxg"]
 [ext_resource type="AudioStream" uid="uid://dcxgvkspv3l7y" path="res://Sounds/Voicy_King penguins.mp3" id="5_5583j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqayo"]
@@ -72,10 +72,10 @@ frame_progress = 1.0
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_s1plx")
 
-[node name="fish_fx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_6btfo")
+[node name="fish_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sxnxg")
 
-[node name="pinguim_fx" type="AudioStreamPlayer2D" parent="."]
+[node name="penguim_fx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_5583j")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

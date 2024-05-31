@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://iqh3viwyrscs"]
+[gd_scene load_steps=21 format=3 uid="uid://iqh3viwyrscs"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_jjtsa"]
 [ext_resource type="Texture2D" uid="uid://ddwsa6gs8n1p" path="res://Assets/Title Screen/Background.png" id="2_072g4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/transition_out.gd" id="7_iqrna"]
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="8_5r0dk"]
 [ext_resource type="Shader" path="res://Shaders/transition2.gdshader" id="8_y80sw"]
+[ext_resource type="AudioStream" uid="uid://dstcwp4r3ead3" path="res://Sounds/Introduction.mp3" id="10_8j2pa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47gnh"]
 
@@ -282,6 +283,11 @@ libraries = {
 }
 autoplay = "reveal"
 
+[node name="titleScreen_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8j2pa")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/controls_btn" to="." method="_on_controls_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]

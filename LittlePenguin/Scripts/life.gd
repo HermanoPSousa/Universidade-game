@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var life_fx = $life_fx as AudioStreamPlayer
 
 var lifes:= 1
 
@@ -15,6 +16,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	$anim.play("collect")
+	$life_fx.play()
 	Globals.player_life += lifes
 	
 

@@ -40,17 +40,18 @@ layout_mode = 0
 offset_left = 64.0
 offset_top = 56.0
 offset_right = 1208.0
-offset_bottom = 216.0
+offset_bottom = 424.0
 text = "Musics
-scene 1 :
-scene 2 :
-scene 3 :
-scene 4 :
+Introduction: SolarMusic- pixabay  - https://pixabay.com
+scene 1 : DenKyschuk - pixabay  - https://pixabay.com
+scene 2 : DenKyschuk - pixabay  - https://pixabay.com
+scene 3 : DenKyschuk - pixabay -   - https://pixabay.com
+scene 4 : DenKyschuk - pixabay  - https://pixabay.com
 
 Songs
 coin   :
-heart :
-fish    :
+heart : SoundReality - pixabay- pixabay  - https://pixabay.com
+fish    : Sucking - Pixabay -  - pixabay- pixabay  - https://pixabay.com
 egg    :"
 horizontal_alignment = 1
 vertical_alignment = 1

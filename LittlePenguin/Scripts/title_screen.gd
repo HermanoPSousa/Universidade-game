@@ -1,13 +1,16 @@
 extends Control
 
+@onready var title_screen_fx = $titleScreen_fx as AudioStreamPlayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	Globals.coins = 0
 	Globals.score = 0
 	Globals.player_life = 2
 	#$@onready var v_box_container = $VBoxContainer
-
+	$titleScreen_fx.play()
 	#$MarginContainer/HBoxContainer/VBoxContainer/start_btn.grab_focus()
 	$VBoxContainer/start_btn.grab_focus()
 
@@ -30,3 +33,7 @@ func _on_controls_btn_pressed():
 
 func _on_transition_out_child_exiting_tree(node):
 	pass
+
+
+
+	
