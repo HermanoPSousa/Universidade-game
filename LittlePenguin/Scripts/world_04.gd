@@ -10,7 +10,7 @@ func _ready():
 	control.time_is_up.connect(game_over)
 	Globals.coins = 0
 	Globals.score = 0
-	Globals.player_life = 3
+	Globals.player_life = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,3 +20,7 @@ func _process(delta):
 func reload_game():
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
+	
+
+func game_over():
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

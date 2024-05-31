@@ -9,9 +9,10 @@ func _ready():
 	player.follow_camera(camera)
 	player.player_has_died.connect(game_over)
 	control.time_is_up.connect(game_over)
+	$HUD/control/container/coins_container/coins_icon
 	#Globals.coins = 0
 	#Globals.score = 0
-	#Globals.player_life = 3
+	#Globals.player_life = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,10 +25,10 @@ func reload_game():
 	player.player_has_died_connect("game_over")
 	Globals.coins = 0
 	Globals.score = 0
-	Globals.player_life = 2
+	Globals.player_life = 1
 	get_tree().reload_current_scene()
 	
 func game_over():
 	#get_tree().change_scene_to_file("res://Levels/title_screen.tscn")
 	#get_tree().change_scene_to_file("game_over")
-	get_tree().change_scene_to_file("res://Prefabs/game_over.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

@@ -13,6 +13,7 @@ var is_hurted := false
 var knockback_vector := Vector2.ZERO
 var knockback_power := 20
 var direction
+var flag_alert := 0
 
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
@@ -84,24 +85,32 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	else:
 		queue_free()		
 		emit_signal("player_has_died")
-		
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
-		print("knockback_force: " + str(knockback_force))
-		print("knockback_force: " + str(Vector2.ZERO))
 		
-		var knockback_tween := get_tree().create_tween()	
-		
-		print("knockback_tween: " + str(knockback_tween))	
-		print("knockback_vector : " + str(knockback_vector))	
-		print(self)
-		print ("Vector2.Zero" + str(Vector2.ZERO))
-		print("duration: " + str(duration))
-		
-		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-		animation.modulate = Color(1, 0, 0, 1)
-		knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
+		if Globals.player_life >0:	
+			var knockback_tween := get_tree().create_tween()		
+			knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+			animation.modulate = Color(1, 0, 0, 1)
+			knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
+			flag_alert = 0
+			
+		elif Globals.player_life ==0:
+			
+			if flag_alert == 0:
+				var knockback_tween := get_tree().create_tween()	
+				knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+				animation.modulate = Color(1, 0, 0, 1)
+				knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
+				flag_alert = 2
+				
+		elif Globals.player_life < 0:
+			
+			if flag_alert == 2:
+				queue_free()		
+				emit_signal("player_has_died")
+				flag_alert == 0
 	else:
 		#is_hurted = true
 		#await get_tree().create_timer(.3).timeout
@@ -125,3 +134,5 @@ func _set_state():
 		
 	if animation.name != state:
 		animation.play(state)
+		
+
