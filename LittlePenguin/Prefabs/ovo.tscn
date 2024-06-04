@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c4u6k2mwngw8v" path="res://Assets/Cenario 1/Effects/EFEITO OVO.png" id="1_aqwh7"]
 [ext_resource type="Script" path="res://Scripts/ovo.gd" id="1_e6eor"]
 [ext_resource type="Texture2D" uid="uid://c61rxowusgnjq" path="res://Assets/Cenario 1/Elements/OVO.png" id="2_u4xr8"]
-[ext_resource type="AudioStream" uid="uid://dcxgvkspv3l7y" path="res://Sounds/Voicy_King penguins.mp3" id="4_cwrsk"]
+[ext_resource type="AudioStream" uid="uid://7olj6fptocpx" path="res://Sounds/WinFantasy - Pixabay - pixabay.com.mp3" id="4_2igc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnw14"]
 atlas = ExtResource("1_aqwh7")
@@ -69,9 +69,8 @@ autoplay = "idle"
 position = Vector2(-7, 5)
 shape = SubResource("CircleShape2D_3ps3h")
 
-[node name="ovo_fx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_cwrsk")
-max_distance = 8.0
+[node name="egg_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2igc7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

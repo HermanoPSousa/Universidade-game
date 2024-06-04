@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var ovo_fx = $ovo_fx as AudioStreamPlayer
+@onready var egg_fx = $egg_fx as AudioStreamPlayer
+
 @onready var scene_transition = $"../scene_transition"
 #@onready var transition = $"../transition"
 
@@ -9,7 +10,6 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 
 
@@ -19,9 +19,8 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	
 	$anim.play("collect")
-	
+	egg_fx.play()
 	if body.name == "player" and !next_level == "":
 		scene_transition.change_scene(next_level)
 	else:

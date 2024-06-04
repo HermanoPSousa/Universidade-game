@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dof1clq856p7n"]
+[gd_scene load_steps=8 format=3 uid="uid://dof1clq856p7n"]
 
 [ext_resource type="Script" path="res://Scripts/finalScreen.gd" id="1_01cbs"]
 [ext_resource type="Texture2D" uid="uid://vxj3cmmojwwo" path="res://Assets/Final Screen/Descobrimento.bmp" id="1_fpd5k"]
 [ext_resource type="Texture2D" uid="uid://c1okejfhjvhn" path="res://Assets/Final Screen/Pais Ampliados.png" id="2_0gmex"]
 [ext_resource type="Theme" uid="uid://bx45csdc1jpf0" path="res://defaultButton.tres" id="3_ys7j8"]
 [ext_resource type="AudioStream" uid="uid://cv3dbmwhdla88" path="res://Musics/Future-Documentary-AudioCoffee-pixabay.com.mp3" id="5_tq3ld"]
+[ext_resource type="AudioStream" uid="uid://y3giq6p4gplq" path="res://Sounds/Voicy Gentoo Penguin - voicy.network.mp3" id="6_uafvn"]
+[ext_resource type="FontFile" uid="uid://cjidjv5pgkmx8" path="res://Fonts/Orbitron-Bold.ttf" id="7_1cfpa"]
 
 [node name="finalScreen" type="Node2D"]
 script = ExtResource("1_01cbs")
@@ -55,6 +57,7 @@ offset_top = 703.0
 offset_right = 855.0
 offset_bottom = 771.0
 focus_neighbor_top = NodePath("../quitGame_btn")
+focus_neighbor_bottom = NodePath("../quitGame_btn")
 theme = ExtResource("3_ys7j8")
 theme_override_font_sizes/font_size = 60
 text = "Restart"
@@ -64,7 +67,8 @@ offset_left = 421.0
 offset_top = 810.0
 offset_right = 855.0
 offset_bottom = 878.0
-focus_neighbor_bottom = NodePath(".")
+focus_neighbor_top = NodePath("../restart_btn")
+focus_neighbor_bottom = NodePath("../restart_btn")
 theme = ExtResource("3_ys7j8")
 theme_override_font_sizes/font_size = 60
 text = "Quit Game"
@@ -73,7 +77,78 @@ text = "Quit Game"
 stream = ExtResource("5_tq3ld")
 
 [node name="finalScreenMusic_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_uafvn")
 autoplay = true
+
+[node name="results" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 92.0
+offset_right = 311.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0.913725, 0, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 60
+text = "Results"
+
+[node name="lives" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 188.0
+offset_right = 284.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0.913725, 0.917647, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 50
+text = "Lives.....:"
+
+[node name="total_lives" type="Label" parent="."]
+offset_left = 269.0
+offset_top = 189.0
+offset_right = 530.0
+offset_bottom = 249.0
+theme_override_colors/font_color = Color(0, 0.913725, 0.917647, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 50
+text = "00"
+
+[node name="coins" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 254.0
+offset_right = 284.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0.913725, 0.917647, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 50
+text = "Coins.....:"
+
+[node name="total_coins" type="Label" parent="."]
+offset_left = 269.0
+offset_top = 254.0
+offset_right = 530.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0.913725, 0.917647, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 50
+text = "0000"
+
+[node name="scores" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 314.0
+offset_right = 285.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0, 0.913725, 0.917647, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 50
+text = "Scores.:"
+
+[node name="total_scores" type="Label" parent="."]
+offset_left = 270.0
+offset_top = 314.0
+offset_right = 531.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0, 0.913725, 0.917647, 1)
+theme_override_fonts/font = ExtResource("7_1cfpa")
+theme_override_font_sizes/font_size = 50
+text = "000000"
 
 [connection signal="pressed" from="restart_btn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="quitGame_btn" to="." method="_on_quit_game_btn_pressed"]
