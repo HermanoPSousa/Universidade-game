@@ -1060,7 +1060,6 @@ autoplay = true
 [node name="HUD" parent="." instance=ExtResource("18_gq5tk")]
 
 [node name="scene_transition" parent="." instance=ExtResource("22_pchlo")]
-visible = false
 
 [node name="PaisDoPinguim" type="Sprite2D" parent="."]
 position = Vector2(4516, 879)

@@ -12,8 +12,7 @@ func _ready():
 	$restart_btn.grab_focus()
 	total_coins.text = str("%04d" % Globals.coins)
 	total_scores.text = str("%06d" % Globals.score)
-	total_lives.text = str("%02d" % Globals.player_life)
-	
+	total_lives.text = str("%02d" % Globals.player_life)	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -10,12 +10,12 @@ const JUMP_VELOCITY = -400.0
 
 var direction := -1
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+# obtendo a gravidade
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	# Add the gravity.
+	# adiciona a gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -34,7 +34,6 @@ func _physics_process(delta):
 
 func _on_anim_animation_finished(anim_name):
 	if anim_name == "hurt":
-		#Globals.score += 100
 		queue_free()
 		
 			

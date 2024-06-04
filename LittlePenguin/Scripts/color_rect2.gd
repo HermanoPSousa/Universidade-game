@@ -2,6 +2,7 @@ extends ColorRect
 
 var threshold = 0.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#função que determina o instante de início da transição entre as fases
+#efeito zebrado em laranja e preto
 func _process(delta):
 	material.set("shader_parameter/threshold", threshold)

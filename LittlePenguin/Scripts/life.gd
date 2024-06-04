@@ -4,19 +4,11 @@ extends Area2D
 
 var lifes:= 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+#função que o player coleta vida e adiciona
 func _on_body_entered(body):
 	$anim.play("collect")
 	$life_fx.play()
+	await $collision.call_deferred("queue_free") #evita a colisão dupla de vidas
 	Globals.player_life += lifes
 	
 

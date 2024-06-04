@@ -1,23 +1,11 @@
 extends Area2D
 
 @onready var egg_fx = $egg_fx as AudioStreamPlayer
-
 @onready var scene_transition = $"../scene_transition"
-#@onready var transition = $"../transition"
-
 @export var next_level : String = ""
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+#quando o player entra no espaço do componente ovo é verificado se há um cenário
+#vinculado. Caso sim, o cenário é chamado. Senão, exibe mensagem "Scene no load"
 func _on_body_entered(body):
 	$anim.play("collect")
 	egg_fx.play()
@@ -27,7 +15,7 @@ func _on_body_entered(body):
 		print("scene no load")
 	
 
-
+#finaliza o cenário
 func _on_anim_animation_finished():
 	queue_free()
 	

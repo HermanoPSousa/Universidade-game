@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://boib0utmnoh5s"]
+[gd_scene load_steps=25 format=3 uid="uid://boib0utmnoh5s"]
 
 [ext_resource type="Texture2D" uid="uid://bvuqri2is3tq4" path="res://Assets/Cenario 1/Tiles/Floor 3.png" id="1_bvjmq"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_q55ny"]
@@ -15,15 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://dofyywp2rc0v1" path="res://Prefabs/fish.tscn" id="10_jq7t0"]
 [ext_resource type="PackedScene" uid="uid://bk2n5dc637qos" path="res://Prefabs/ovo.tscn" id="12_e65d8"]
 [ext_resource type="PackedScene" uid="uid://dv4hcethtmjmc" path="res://Actors/enemy.tscn" id="13_3ws6b"]
-[ext_resource type="Shader" path="res://Shaders/transition2.gdshader" id="17_kqfcj"]
 [ext_resource type="AudioStream" uid="uid://dx4b7uba3iunl" path="res://Musics/Event - DenKyshuk - freesound.com.mp3" id="20_g65h6"]
 [ext_resource type="PackedScene" uid="uid://nao1635g35gu" path="res://Prefabs/hud.tscn" id="20_op4so"]
 [ext_resource type="PackedScene" uid="uid://ccmde8lcvxq3i" path="res://Prefabs/spikes.tscn" id="22_trgcy"]
 [ext_resource type="PackedScene" uid="uid://dhogg3bexjdkf" path="res://Prefabs/play_pause.tscn" id="24_3xwhf"]
 [ext_resource type="PackedScene" uid="uid://c03beecqut3xa" path="res://Prefabs/abyss_second.tscn" id="25_30r4h"]
 [ext_resource type="PackedScene" uid="uid://ey0cyg8ovekk" path="res://Prefabs/scene_transition.tscn" id="25_ajhfg"]
-[ext_resource type="Script" path="res://Scripts/transition.gd" id="28_hxabk"]
-[ext_resource type="Script" path="res://Scripts/color_rect.gd" id="29_f7m58"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijt8m"]
 texture = ExtResource("1_bvjmq")
@@ -910,13 +907,6 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_ijt8m")
 sources/1 = SubResource("TileSetAtlasSource_otve0")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bimyf"]
-shader = ExtResource("17_kqfcj")
-shader_parameter/lines = 40.0
-shader_parameter/threshold = 0.0
-shader_parameter/line_color_a = Color(1, 1, 1, 1)
-shader_parameter/line_color_b = Color(0, 0, 0, 1)
-
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_q55ny")
 
@@ -1094,15 +1084,6 @@ position = Vector2(4112, 864)
 
 [node name="enemy8" parent="enemies" instance=ExtResource("13_3ws6b")]
 position = Vector2(4168, 216)
-
-[node name="transition" type="CanvasLayer" parent="."]
-script = ExtResource("28_hxabk")
-
-[node name="color_rect" type="ColorRect" parent="transition"]
-material = SubResource("ShaderMaterial_bimyf")
-offset_right = 1280.0
-offset_bottom = 960.0
-script = ExtResource("29_f7m58")
 
 [node name="HUD" parent="." instance=ExtResource("20_op4so")]
 

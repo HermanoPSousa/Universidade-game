@@ -15,7 +15,7 @@ func _process(delta):
 
 
 func _on_restart_btn_pressed():
-	get_tree().change_scene_to_file("res://Levels/title_screen.tscn")
+	get_tree().change_scene_to_file("res://Prefabs/access_screen.tscn")
 
 
 func _on_quit_game_btn_pressed():

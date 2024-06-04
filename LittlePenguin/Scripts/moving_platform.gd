@@ -10,15 +10,16 @@ const WAIT_DURATION := 1.0
 var follow := Vector2.ZERO
 var platform_center := 40
 
-# Called when the node enters the scene tree for the first time.
+#ao ler este componente a função para mover a plataforma é chamada
 func _ready() -> void:
 	move_platform()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta: float) -> void:
 	platform.position = platform.position.lerp(follow, 0.5)
-	
+
+#função que move a plataforma	
 func move_platform() :
 	var move_direction = Vector2.RIGHT * distance if move_horizontal else Vector2.UP * distance
 	var duration = move_direction.length() / float(move_speed * platform_center)

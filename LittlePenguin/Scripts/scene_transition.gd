@@ -2,10 +2,6 @@ extends CanvasLayer
 
 @onready var background = $background
 
-func ready():
-	#show_new_scene()
-	pass
-
 func change_scene(path, delay = 3.5):
 	var scene_transition = get_tree().create_tween()
 	scene_transition.tween_property(background, "threshold", 1.0, 0.5).set_delay(delay)

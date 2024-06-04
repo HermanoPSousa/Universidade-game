@@ -14,7 +14,7 @@ var seconds := 0
 
 signal time_is_up()
 
-# Called when the node enters the scene tree for the first time.
+# exibe os valores iniciais de coins, score e life
 func _ready():
 	coins_counter.text = str("%04d" % Globals.coins)
 	score_counter.text = str("%06d" % Globals.score)
@@ -22,17 +22,18 @@ func _ready():
 	timer_counter.text = str("%02d" % default_minutes) + ":" + str("%02d" % default_seconds)
 	reset_clock_timer()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# exibe os valores dos itens que vão sendo coletados e acumulados
 func _process(delta):
 	coins_counter.text = str("%04d" % Globals.coins)
 	score_counter.text = str("%06d" % Globals.score)
 	life_counter.text = str("%02d" % Globals.player_life)
 	
-	
+	# se o tempo esgotou emite um sinal
 	if minutes == 0 and seconds == 0:
 		emit_signal("time_is_up")
 
 
+#cronometrando regressivamente e exibindo o tempo decorrido
 func _on_clock_timer_timeout():
 	if seconds == 0:
 		if minutes > 0:
@@ -42,7 +43,8 @@ func _on_clock_timer_timeout():
 	seconds -= 1
 	timer_counter.text = str("%02d" % minutes) + ":" + str("%02d" % seconds)
 	
-	
+
+#retorna o tempo padrão	
 func reset_clock_timer():
 	minutes = default_minutes
 	seconds = default_seconds

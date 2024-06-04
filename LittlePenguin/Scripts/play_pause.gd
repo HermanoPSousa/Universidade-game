@@ -2,17 +2,13 @@ extends CanvasLayer
 
 @onready var resume_btn = $resume_btn
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	visible = false
-	resume_btn.grab_focus()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	visible = false #tela invisível
+	resume_btn.grab_focus() #o botão Resume tem o foco.
 	
-	
+#funcção que observa se foi pressionado a tecla ESC do teclado.
+#Se sim, mostra a tela, foi solicitado a pausa e o botão Resume mantém sob foco.
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		visible = true

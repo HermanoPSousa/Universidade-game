@@ -11,7 +11,6 @@ events = [SubResource("InputEventAction_nefpu")]
 
 [node name="play_pause" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_shw1d")
 
 [node name="color_rect" type="ColorRect" parent="."]

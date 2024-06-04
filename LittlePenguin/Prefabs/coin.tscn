@@ -9,28 +9,17 @@ script/source = "extends Area2D
 
 @onready var coin_fx = $coin_fx as AudioStreamPlayer
 
-
 var coins := 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+#função em que o player coleta os coins e adiciona
 func _on_body_entered(body):
 	$anim.play(\"collect\")
-	$coin_fx.play()
-	#evita a colisão dupla de moedas
-	await $collision.call_deferred(\"queue_free\")
+	$coin_fx.play()	
+	await $collision.call_deferred(\"queue_free\") #evita a colisão dupla de moedas
 	Globals.coins += coins
 	
 
-
+#fim da animação
 func _on_anim_animation_finished():
 	queue_free()
 "
