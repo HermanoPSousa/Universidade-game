@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2twqjg6ccox0"
+path="res://.godot/imported/Game Start - pixabay.com - coin.mp3-32fc1449cd708e08b0824f74952996e3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Game Start - pixabay.com - coin.mp3"
+dest_files=["res://.godot/imported/Game Start - pixabay.com - coin.mp3-32fc1449cd708e08b0824f74952996e3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

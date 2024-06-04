@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://y3giq6p4gplq"
+path="res://.godot/imported/Voicy Gentoo Penguin - voicy.network.mp3-507e94e1122e97b8e1cd129a983c4435.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Voicy Gentoo Penguin - voicy.network.mp3"
+dest_files=["res://.godot/imported/Voicy Gentoo Penguin - voicy.network.mp3-507e94e1122e97b8e1cd129a983c4435.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

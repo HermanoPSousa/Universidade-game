@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uf3xe75gabju"
+path="res://.godot/imported/Game Over - Audley Fergine -.mp3-4c5da076d8ef5d94d15ae194e9143d98.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Game Over - Audley Fergine -.mp3"
+dest_files=["res://.godot/imported/Game Over - Audley Fergine -.mp3-4c5da076d8ef5d94d15ae194e9143d98.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

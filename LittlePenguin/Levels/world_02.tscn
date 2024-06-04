@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://srwqvr43mvwa" path="res://Actors/player.tscn" id="1_g23dk"]
 [ext_resource type="Script" path="res://Scripts/world_02.gd" id="1_iaoqy"]
 [ext_resource type="Texture2D" uid="uid://dwn66r76t0fhk" path="res://Assets/Cenario 2/Tiles/Ladrilho Laranja.png" id="2_7q6ak"]
-[ext_resource type="AudioStream" uid="uid://xr7sqkqff0x2" path="res://Musics/Cenario-02.mp3" id="2_d1c8v"]
 [ext_resource type="Texture2D" uid="uid://cqap511xflsb8" path="res://Assets/Cenario 2/Background/06-CEU.png" id="3_627yr"]
 [ext_resource type="Texture2D" uid="uid://breccy3g0si6k" path="res://Assets/Cenario 2/Tiles/Ladrilho Cinza.png" id="4_0f8bi"]
 [ext_resource type="Texture2D" uid="uid://cyje4jr3at07x" path="res://Assets/Cenario 2/Background/05-NOITE.png" id="4_gd2r2"]
@@ -16,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://brnrt3hg8gt5q" path="res://Assets/Cenario 2/Background/01-PREDIOS ILUMINADOS.png" id="7_42o0w"]
 [ext_resource type="PackedScene" uid="uid://dv4hcethtmjmc" path="res://Actors/enemy.tscn" id="9_jm76y"]
 [ext_resource type="PackedScene" uid="uid://dlkfgnpmn3cwb" path="res://Prefabs/moving_platform.tscn" id="16_gjj54"]
+[ext_resource type="AudioStream" uid="uid://hr8yrsknqbsw" path="res://Musics/Digital Abstraction - DenKyshuk - freesound.org.mp3" id="19_p88m3"]
 [ext_resource type="PackedScene" uid="uid://ey0cyg8ovekk" path="res://Prefabs/scene_transition.tscn" id="20_etl10"]
 [ext_resource type="PackedScene" uid="uid://c03beecqut3xa" path="res://Prefabs/abyss_second.tscn" id="21_m7kt0"]
-[ext_resource type="PackedScene" uid="uid://d0ml6m5k5i8om" path="res://Prefabs/pause_menu.tscn" id="27_fl511"]
+[ext_resource type="PackedScene" uid="uid://dhogg3bexjdkf" path="res://Prefabs/play_pause.tscn" id="22_uvegt"]
 [ext_resource type="PackedScene" uid="uid://bj8keme8575vt" path="res://Prefabs/coin.tscn" id="29_do4ye"]
 [ext_resource type="PackedScene" uid="uid://dofyywp2rc0v1" path="res://Prefabs/fish.tscn" id="30_vb024"]
 [ext_resource type="PackedScene" uid="uid://b5psl17ifp4fi" path="res://Prefabs/life.tscn" id="31_aficu"]
@@ -1024,7 +1024,7 @@ centered = false
 [node name="platforms" type="Node2D" parent="."]
 
 [node name="moving_platform" parent="platforms" instance=ExtResource("16_gjj54")]
-position = Vector2(573, 47)
+position = Vector2(637, 79)
 move_speed = 5.0
 distance = 3810
 
@@ -1037,9 +1037,6 @@ move_horizontal = false
 position = Vector2(3060, 730)
 distance = 650
 move_horizontal = false
-
-[node name="pause_menu" parent="." instance=ExtResource("27_fl511")]
-visible = false
 
 [node name="lifes" type="Node2D" parent="."]
 
@@ -1176,13 +1173,14 @@ position = Vector2(2904, 464)
 position = Vector2(3232, 688)
 
 [node name="world_fx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_d1c8v")
+stream = ExtResource("19_p88m3")
 autoplay = true
 
 [node name="HUD" parent="." instance=ExtResource("5_qdbsl")]
 
 [node name="scene_transition" parent="." instance=ExtResource("20_etl10")]
-visible = false
 
 [node name="abyss_second" parent="." instance=ExtResource("21_m7kt0")]
 position = Vector2(0, 130)
+
+[node name="play_pause" parent="." instance=ExtResource("22_uvegt")]

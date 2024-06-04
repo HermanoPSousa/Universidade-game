@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx4b7uba3iunl"
+path="res://.godot/imported/Event - DenKyshuk - freesound.com.mp3-41f34be425294c4bf0f2c17319697c16.mp3str"
+
+[deps]
+
+source_file="res://Musics/Event - DenKyshuk - freesound.com.mp3"
+dest_files=["res://.godot/imported/Event - DenKyshuk - freesound.com.mp3-41f34be425294c4bf0f2c17319697c16.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

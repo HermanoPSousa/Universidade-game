@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v0woh7t4y31q"]
+[gd_scene load_steps=4 format=3 uid="uid://v0woh7t4y31q"]
 
 [ext_resource type="Script" path="res://Scripts/controls_screen.gd" id="1_0po8s"]
 [ext_resource type="Theme" uid="uid://bx45csdc1jpf0" path="res://defaultButton.tres" id="2_4ud63"]
+[ext_resource type="Texture2D" uid="uid://dvnqfv1pyoth0" path="res://Assets/Controls/Controls.png" id="3_m6vco"]
 
 [node name="control_screen" type="Control"]
 layout_mode = 3
@@ -26,24 +27,29 @@ layout_mode = 0
 offset_left = 69.0
 offset_top = 72.0
 offset_right = 1208.0
-offset_bottom = 696.0
+offset_bottom = 184.0
 theme_override_colors/font_color = Color(0, 0.690196, 0.572549, 1)
-theme_override_font_sizes/font_size = 30
-text = "CONTROLES
-
-walk left - arrrow left
-walk right - arrou right
-jump - arrow spacebar"
+theme_override_font_sizes/font_size = 60
+text = "CONTROLES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="return_btn" type="Button" parent="."]
 layout_mode = 0
-offset_left = 577.5
+offset_left = 464.5
 offset_top = 814.0
-offset_right = 702.5
-offset_bottom = 853.0
+offset_right = 814.5
+offset_bottom = 882.0
 theme = ExtResource("2_4ud63")
+theme_override_font_sizes/font_size = 60
 text = "Return"
+
+[node name="controls2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 232.0
+offset_right = 1203.0
+offset_bottom = 518.0
+texture = ExtResource("3_m6vco")
 
 [connection signal="pressed" from="return_btn" to="." method="_on_return_btn_pressed"]

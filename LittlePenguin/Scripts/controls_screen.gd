@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_return_btn_pressed():
-	get_tree().change_scene_to_file("res://Levels/title_screen.tscn")
+	get_tree().change_scene_to_file("res://Prefabs/access_screen.tscn")

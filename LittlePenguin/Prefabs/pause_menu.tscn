@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.254902)
+color = Color(0, 0, 0, 0.686275)
 
 [node name="menu_holder" type="VBoxContainer" parent="."]
 anchors_preset = 14
@@ -33,12 +33,14 @@ grow_vertical = 2
 
 [node name="resume_btn" type="Button" parent="menu_holder"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../quit_btn")
 theme = ExtResource("1_cv0xl")
 shortcut = SubResource("Shortcut_qt8sq")
 text = "RESUME"
 
 [node name="quit_btn" type="Button" parent="menu_holder"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../resume_btn")
 theme = ExtResource("1_cv0xl")
 text = "QUIT GAME"
 

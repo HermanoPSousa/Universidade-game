@@ -23,9 +23,9 @@ func reload_game():
 	await get_tree().create_timer(1.0).timeout
 	#player.player_has_died_connect("title_screen")
 	player.player_has_died_connect("game_over")
-	Globals.coins = 0
-	Globals.score = 0
-	Globals.player_life = 1
+	#Globals.coins = 0
+	#Globals.score = 0
+	#Globals.player_life = 0
 	get_tree().reload_current_scene()
 	
 func game_over():

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var player_died = $player_died
 @onready var player_jump = $player_jump as AudioStreamPlayer
 
 const SPEED = 300.0
@@ -80,44 +79,74 @@ func follow_camera(camera):
 	
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	
-	if Globals.player_life > 0:
-		Globals.player_life -= 1
-	else:
-		queue_free()		
-		emit_signal("player_has_died")
+	#if Globals.player_life > 0 && Globals.flag_alert == 0:
+		#Globals.player_life -= 1
+		#print("passou aqui em vida maior que 0")
+	#elif Globals.player_life == 0 && Globals.flag_alert == 0:
+		#"passou aqui em vida maior que 0"
+		#Globals.player_life -= 1 #subtrai mais 1 vida
+		#Globals.flag_alert == 2 #o alerta agora é igual a 2
+		#queue_free()
+		#emit_signal("player_has_died")
+		
+	#if Globals.player_life > 0:
+		#Globals.player_life -= 1
+	#else:
+		#queue_free()		
+		#emit_signal("player_has_died")
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
-		
-		if Globals.player_life >0:	
+		print("passou aqui no Knockbac")
+		if Globals.player_life > 0 && Globals.flag_alert == 0:
+			print("VIDA > 0 e ALERTA = 0")
 			var knockback_tween := get_tree().create_tween()		
 			knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 			animation.modulate = Color(1, 0, 0, 1)
 			knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
+			Globals.player_life -= 1
+		elif Globals.player_life == 0 && Globals.flag_alert == 0:
+			print("VIDA = 0 e ALERTA = 0")
+			#var knockback_tween := get_tree().create_tween()		
+			#knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+			#animation.modulate = Color(1, 0, 0, 1)
+			#knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
+			Globals.player_life -= 1 #subtrai mais 1 vida
+			Globals.flag_alert == 2 #o alerta agora é igual a 2
+			#if Globals.player_life < 0 && Globals.flag_alert == 2:
+			print("VIDA < 0 e ALERTA = 2")
+			queue_free()
+			emit_signal("player_has_died")
+		#------------------------------------------------------------------------
+		#if Globals.player_life >0:	
+			#var knockback_tween := get_tree().create_tween()		
+			#knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+			#animation.modulate = Color(1, 0, 0, 1)
+			#knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
 			#flag_alert = 0
 			
-		elif Globals.player_life ==0:
+		#elif Globals.player_life ==0:
 			
-			if flag_alert == 0:
-				var knockback_tween := get_tree().create_tween()	
-				knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-				animation.modulate = Color(1, 0, 0, 1)
-				knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
-				flag_alert = 2
+			#if flag_alert == 0:
+				#var knockback_tween := get_tree().create_tween()	
+				#knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+				#animation.modulate = Color(1, 0, 0, 1)
+				#knockback_tween.parallel().tween_property(animation, "modulate", Color(1, 1 ,1, 1), duration)
+				#flag_alert = 2
 				
-		elif Globals.player_life < 0:
+		#elif Globals.player_life < 0:
 			
-			if flag_alert == 2:
-				queue_free()		
-				emit_signal("player_has_died")
-				flag_alert == 0
-	else:
+			#if flag_alert == 2:
+				#queue_free()		
+				#emit_signal("player_has_died")
+				#flag_alert == 0
+	#else:
 		#is_hurted = true
 		#await get_tree().create_timer(.3).timeout
 		#is_hurted = false
-		print("senao")
-		print("knockback_force: " + str(knockback_force))
-		print("knockback_force: " + str(Vector2.ZERO))
+		#print("senao")
+		#print("knockback_force: " + str(knockback_force))
+		#print("knockback_force: " + str(Vector2.ZERO))
 	
 	
 	

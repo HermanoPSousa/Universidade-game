@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4le8ukhsm4rh"
+path="res://.godot/imported/Level up bonus - bonus -sequence-2 - Floraphonic - pixabay.com.mp3-4b9f11fa38451f23720e1cb7a9d3e68e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Level up bonus - bonus -sequence-2 - Floraphonic - pixabay.com.mp3"
+dest_files=["res://.godot/imported/Level up bonus - bonus -sequence-2 - Floraphonic - pixabay.com.mp3-4b9f11fa38451f23720e1cb7a9d3e68e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

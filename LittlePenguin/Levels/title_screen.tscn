@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/transition_out.gd" id="7_iqrna"]
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="8_5r0dk"]
 [ext_resource type="Shader" path="res://Shaders/transition2.gdshader" id="8_y80sw"]
-[ext_resource type="AudioStream" uid="uid://dstcwp4r3ead3" path="res://Sounds/Introduction.mp3" id="10_8j2pa"]
+[ext_resource type="AudioStream" uid="uid://yls2nuyb4fqw" path="res://Sounds/Intro effect music - SolarMusic - pixabay.com.mp3" id="10_tw4wq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47gnh"]
 
@@ -153,23 +153,6 @@ offset_bottom = 960.0
 texture = ExtResource("2_072g4")
 expand_mode = 2
 
-[node name="moji" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 316.0
-offset_right = 1276.0
-offset_bottom = 960.0
-size_flags_horizontal = 0
-texture = ExtResource("5_ejt3q")
-expand_mode = 2
-
-[node name="game_logo" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 478.0
-offset_top = 4.0
-offset_right = 1278.0
-offset_bottom = 604.0
-texture = ExtResource("3_f65os")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_direction = 1
 layout_mode = 2
@@ -186,7 +169,6 @@ custom_minimum_size = Vector2(501, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../quit_btn")
-mouse_default_cursor_shape = 2
 theme = ExtResource("5_qkemx")
 theme_override_font_sizes/font_size = 60
 text = "Start"
@@ -268,6 +250,23 @@ theme = ExtResource("5_qkemx")
 theme_override_font_sizes/font_size = 60
 text = "Quit game"
 
+[node name="moji" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 316.0
+offset_right = 1276.0
+offset_bottom = 960.0
+size_flags_horizontal = 0
+texture = ExtResource("5_ejt3q")
+expand_mode = 2
+
+[node name="game_logo" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 478.0
+offset_top = 4.0
+offset_right = 1278.0
+offset_bottom = 604.0
+texture = ExtResource("3_f65os")
+
 [node name="transition_out" type="CanvasLayer" parent="."]
 script = ExtResource("7_iqrna")
 
@@ -284,7 +283,7 @@ libraries = {
 autoplay = "reveal"
 
 [node name="titleScreen_fx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_8j2pa")
+stream = ExtResource("10_tw4wq")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

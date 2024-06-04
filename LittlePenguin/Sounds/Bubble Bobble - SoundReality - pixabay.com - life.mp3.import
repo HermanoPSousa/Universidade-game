@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnqljcev7mmgx"
+path="res://.godot/imported/Bubble Bobble - SoundReality - pixabay.com - life.mp3-aa728ee992700e762627461598e869a6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Bubble Bobble - SoundReality - pixabay.com - life.mp3"
+dest_files=["res://.godot/imported/Bubble Bobble - SoundReality - pixabay.com - life.mp3-aa728ee992700e762627461598e869a6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

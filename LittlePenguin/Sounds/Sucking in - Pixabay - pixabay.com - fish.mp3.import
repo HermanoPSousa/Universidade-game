@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvwgpu80naaqx"
+path="res://.godot/imported/Sucking in - Pixabay - pixabay.com - fish.mp3-fa427a08ee3f7adf14ece2a7e27603f7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Sucking in - Pixabay - pixabay.com - fish.mp3"
+dest_files=["res://.godot/imported/Sucking in - Pixabay - pixabay.com - fish.mp3-fa427a08ee3f7adf14ece2a7e27603f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

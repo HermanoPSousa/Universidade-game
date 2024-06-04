@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0y4s51bb6x5t"]
+
+[ext_resource type="Script" path="res://Scripts/final_screen.gd" id="1_2wyvt"]
+[ext_resource type="Texture2D" uid="uid://c1okejfhjvhn" path="res://Assets/Final Screen/Pais Ampliados.png" id="1_dfl8n"]
+[ext_resource type="Texture2D" uid="uid://vxj3cmmojwwo" path="res://Assets/Final Screen/Descobrimento.bmp" id="2_6x82i"]
+[ext_resource type="Theme" uid="uid://bx45csdc1jpf0" path="res://defaultButton.tres" id="2_nk3ug"]
+[ext_resource type="AudioStream" uid="uid://tl0jgk2hxvia" path="res://Sounds/Voicy_Gentoo Penguin .mp3" id="4_t4gav"]
+[ext_resource type="AudioStream" uid="uid://0t3xbdyptl8k" path="res://Musics/Final Screen.mp3" id="6_hyb1s"]
+
+[node name="final_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2wyvt")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 960.0
+texture = ExtResource("2_6x82i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 964.0
+color = Color(0, 0, 0, 0.803922)
+
+[node name="penguins_family" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 40.0
+offset_right = 745.0
+offset_bottom = 324.0
+texture = ExtResource("1_dfl8n")
+
+[node name="message" type="Label" parent="."]
+layout_mode = 0
+offset_top = 353.0
+offset_right = 1276.0
+offset_bottom = 696.0
+theme_override_colors/font_color = Color(0.988235, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Congratulations brave player!
+You helped me find my parents
+ who I had lost when we were surprised in an attack by enemies.
+ Thanks!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 703.0
+offset_right = 855.0
+offset_bottom = 771.0
+focus_neighbor_top = NodePath("../quitGame_btn")
+theme = ExtResource("2_nk3ug")
+theme_override_font_sizes/font_size = 60
+text = "Restart"
+
+[node name="quitGame_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 810.0
+offset_right = 855.0
+offset_bottom = 878.0
+focus_neighbor_bottom = NodePath(".")
+theme = ExtResource("2_nk3ug")
+theme_override_font_sizes/font_size = 60
+text = "Quit Game"
+
+[node name="finalScreen_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t4gav")
+
+[node name="finalScreenMusic_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hyb1s")
+autoplay = true
+
+[connection signal="pressed" from="restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="quitGame_btn" to="." method="_on_quit_game_btn_pressed"]

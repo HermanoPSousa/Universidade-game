@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjke0sxe6orgx"]
+[gd_scene load_steps=4 format=3 uid="uid://bjke0sxe6orgx"]
 
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="1_av775"]
 [ext_resource type="Theme" uid="uid://bx45csdc1jpf0" path="res://defaultButton.tres" id="1_t8fqb"]
+[ext_resource type="Texture2D" uid="uid://qq5hqbqytbxr" path="res://Assets/Credits Screen/Creditos.png" id="2_snb4l"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,6 +22,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.643137)
 
+[node name="credits" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 1256.0
+offset_bottom = 464.0
+texture = ExtResource("2_snb4l")
+expand_mode = 1
+
 [node name="return_btn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -31,11 +40,12 @@ anchor_bottom = 21.325
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_t8fqb")
-theme_override_font_sizes/font_size = 30
-text = "Return"
+theme_override_font_sizes/font_size = 60
+text = "   Return   "
 metadata/_edit_use_anchors_ = true
 
 [node name="credit" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = 56.0
@@ -59,9 +69,9 @@ vertical_alignment = 1
 [node name="thanks" type="Label" parent="."]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 436.0
+offset_top = 452.0
 offset_right = 1216.0
-offset_bottom = 719.0
+offset_bottom = 768.0
 theme_override_colors/font_color = Color(0, 0.717647, 0.556863, 1)
 theme_override_font_sizes/font_size = 30
 text = "AGRADECIMENTOS

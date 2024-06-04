@@ -1,8 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://boib0utmnoh5s"]
+[gd_scene load_steps=29 format=3 uid="uid://boib0utmnoh5s"]
 
 [ext_resource type="Texture2D" uid="uid://bvuqri2is3tq4" path="res://Assets/Cenario 1/Tiles/Floor 3.png" id="1_bvjmq"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_q55ny"]
-[ext_resource type="PackedScene" uid="uid://d0ml6m5k5i8om" path="res://Prefabs/pause_menu.tscn" id="2_3plmg"]
 [ext_resource type="PackedScene" uid="uid://b5psl17ifp4fi" path="res://Prefabs/life.tscn" id="2_8lg2g"]
 [ext_resource type="PackedScene" uid="uid://bj8keme8575vt" path="res://Prefabs/coin.tscn" id="2_lyes0"]
 [ext_resource type="PackedScene" uid="uid://srwqvr43mvwa" path="res://Actors/player.tscn" id="2_y37x3"]
@@ -17,14 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://bk2n5dc637qos" path="res://Prefabs/ovo.tscn" id="12_e65d8"]
 [ext_resource type="PackedScene" uid="uid://dv4hcethtmjmc" path="res://Actors/enemy.tscn" id="13_3ws6b"]
 [ext_resource type="Shader" path="res://Shaders/transition2.gdshader" id="17_kqfcj"]
+[ext_resource type="AudioStream" uid="uid://dx4b7uba3iunl" path="res://Musics/Event - DenKyshuk - freesound.com.mp3" id="20_g65h6"]
 [ext_resource type="PackedScene" uid="uid://nao1635g35gu" path="res://Prefabs/hud.tscn" id="20_op4so"]
-[ext_resource type="PackedScene" uid="uid://b0ofvcxdtfdtt" path="res://Prefabs/abyss.tscn" id="24_v1qn2"]
+[ext_resource type="PackedScene" uid="uid://ccmde8lcvxq3i" path="res://Prefabs/spikes.tscn" id="22_trgcy"]
+[ext_resource type="PackedScene" uid="uid://dhogg3bexjdkf" path="res://Prefabs/play_pause.tscn" id="24_3xwhf"]
+[ext_resource type="PackedScene" uid="uid://c03beecqut3xa" path="res://Prefabs/abyss_second.tscn" id="25_30r4h"]
 [ext_resource type="PackedScene" uid="uid://ey0cyg8ovekk" path="res://Prefabs/scene_transition.tscn" id="25_ajhfg"]
 [ext_resource type="Script" path="res://Scripts/transition.gd" id="28_hxabk"]
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="29_f7m58"]
-[ext_resource type="AudioStream" uid="uid://c8x7o5emlss60" path="res://Musics/Cenario-01.mp3" id="31_wgsi7"]
-[ext_resource type="Script" path="res://Scripts/spikes.gd" id="32_e0pyl"]
-[ext_resource type="Texture2D" uid="uid://b6107ro3f5wnx" path="res://Assets/Cenario 1/Denger/CACTOS5.png" id="33_b0p7f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijt8m"]
 texture = ExtResource("1_bvjmq")
@@ -918,9 +917,6 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(1, 1, 1, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ik7g"]
-size = Vector2(320, 32)
-
 [node name="World-01" type="Node2D"]
 script = ExtResource("1_q55ny")
 
@@ -1108,31 +1104,16 @@ offset_right = 1280.0
 offset_bottom = 960.0
 script = ExtResource("29_f7m58")
 
-[node name="pause_menu" parent="." instance=ExtResource("2_3plmg")]
-visible = false
-
 [node name="HUD" parent="." instance=ExtResource("20_op4so")]
 
 [node name="world_fx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("31_wgsi7")
+stream = ExtResource("20_g65h6")
 autoplay = true
 
-[node name="spikes" type="Area2D" parent="."]
-position = Vector2(1136, 912)
-collision_layer = 2
-script = ExtResource("32_e0pyl")
-
-[node name="collision" type="CollisionShape2D" parent="spikes"]
-texture_repeat = 2
-position = Vector2(304, 0)
-shape = SubResource("RectangleShape2D_7ik7g")
-
-[node name="spikes" type="Sprite2D" parent="spikes"]
-position = Vector2(304, 0)
-texture = ExtResource("33_b0p7f")
-
-[node name="abyss" parent="." instance=ExtResource("24_v1qn2")]
+[node name="spikes" parent="." instance=ExtResource("22_trgcy")]
 
 [node name="scene_transition" parent="." instance=ExtResource("25_ajhfg")]
 
-[connection signal="body_entered" from="spikes" to="spikes" method="_on_body_entered"]
+[node name="abyss_second" parent="." instance=ExtResource("25_30r4h")]
+
+[node name="play_pause" parent="." instance=ExtResource("24_3xwhf")]
